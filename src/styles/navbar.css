@@ -1,13 +1,18 @@
 .navbar {
-    width: 100%;
-    background-color: #696969;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-sizing: border-box;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
-
+.navbar.blur {
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
 
 
 
@@ -41,10 +46,53 @@
   transition: color 0.2s ease;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
-  color: #0077ff;
+.nav-left a,
+.nav-right a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.nav-left a {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-left a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.nav-left a:hover {
+  color: white;
+}
+
+.nav-left a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-right a svg {
+  stroke: #ffffff;
+  transition: stroke 0.3s ease, fill 0.3s ease;
+  fill: transparent; /* começa sem preenchimento */
+}
+
+.nav-right a:hover svg {
+  stroke: white;
+  fill: white; /* preenchimento suave, pode ajustar a opacidade */
+}
+
 
 .nav-center {
   font-family: 'Sonsie One';
@@ -54,6 +102,8 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+
+  transform: translate(-50%, -10%); /* move metade da largura e altura */
 }
 
 .nav-right svg {

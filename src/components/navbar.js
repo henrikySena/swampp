@@ -50,6 +50,18 @@ export const navbarLinks = {
 
 
 export function criarNavbar() {
+
+  // adiciona a animação de blur para a navbar após o scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 10) {
+      navbar.classList.add('blur');
+    } else {
+      navbar.classList.remove('blur');
+    }
+  });
+
+
   const nav = document.createElement('nav');
   nav.classList.add('navbar');
 
