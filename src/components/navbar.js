@@ -45,7 +45,7 @@ export const navbarLinks = {
         </svg>`
     }
   ],
-  centro: 'swamp',
+  centro: 'swampp',
 };
 
 
