@@ -1,0 +1,39 @@
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50rem;
+  }
+  
+  .produto {
+    width: 18rem !important;
+    height: 27rem !important;
+    padding: 0.5rem !important;
+    border-radius: 0 !important;
+    background-color: none !important;
+    text-align: center;
+    box-shadow: none !important;
+  }
+  .produto:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+  }
+  
+  .produto img {
+    width: 100%;
+  }
+  .produto-marca {
+    color: #888;
+    text-align: left;
+    font-size: 0.9rem !important;
+  }
+  .produto-nome {
+    color: #000;
+    text-align: left;
+    margin-top: -0.5rem;
+    font-weight: 300;
+  }
+  .produto-preco {
+    color: #888;
+    text-align: left;
+  }

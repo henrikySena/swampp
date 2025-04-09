@@ -52,6 +52,7 @@
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .nav-left a {
@@ -96,7 +97,7 @@
 
 .nav-center {
   font-family: 'Sonsie One';
-  font-size: 2rem;
+  font-size: 1.9rem;
   text-align: center;
   color: #ffffff;
   position: absolute;
