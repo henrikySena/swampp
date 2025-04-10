@@ -9,6 +9,28 @@ export const navbarLinks = {
   direita: [
     {
       texto: '',
+      url: '#perfil',
+      svg: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+            width="24" height="24">
+          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5z" />
+          <path d="M3 21c0-4.4 3.6-8 9-8s9 3.6 9 8" />
+        </svg>`
+    },
+    {
+      texto: '',
+      url: '#buscar',
+      svg: `
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>`
+    },
+    {
+      texto: '',
       url: '#favoritos',
       svg: `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -20,17 +42,6 @@ export const navbarLinks = {
         </svg>
 
       `
-    },
-    {
-      texto: '',
-      url: '#perfil',
-      svg: `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-            width="24" height="24">
-          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5z" />
-          <path d="M3 21c0-4.4 3.6-8 9-8s9 3.6 9 8" />
-        </svg>`
     },
     {
       texto: '',

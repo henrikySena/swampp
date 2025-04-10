@@ -9,10 +9,11 @@
   transition: all 0.3s ease;
 }
 .navbar.blur {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
+
 
 
 
@@ -52,6 +53,7 @@
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .nav-left a {
@@ -96,7 +98,7 @@
 
 .nav-center {
   font-family: 'Sonsie One';
-  font-size: 2rem;
+  font-size: 1.9rem;
   text-align: center;
   color: #ffffff;
   position: absolute;

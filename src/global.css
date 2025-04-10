@@ -17,23 +17,23 @@ body, html {
 /* Largura da barra */
 ::-webkit-scrollbar {
   width: 0px;
+  background-color: #000;
 }
 
 /* Fundo da barra */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
   border-radius: 10px;
 }
 
 /* Cor da alça da barra */
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 100000px;
 }
 
 /* Ao passar o mouse */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #888;
 }
 
 
