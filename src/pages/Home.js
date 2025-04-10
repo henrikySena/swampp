@@ -89,24 +89,65 @@ export function renderHome() {
             : prod.categoria === categoriaSelecionada
         );
   
-    // percorre todos os elementos de 'produto' para criar o elemento na tela
-    produtosFiltrados.forEach(produto => {
-      // cria uma div
-      const div = document.createElement('div');
-      div.classList.add('produto'); //insere uma classe a essa div
-  
-      // preenche essa div criada com os dados de produtos
-      div.innerHTML = `
-        <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
-        <p class="produto-marca">${produto.marca}</p>
-        <p class="produto-nome">${produto.nome}</p>
-        <p class="produto-preco">R$ ${produto.preco.toFixed(2)}</p>
-      `;
+        produtosFiltrados.forEach(produto => {
+          const div = document.createElement('div');
+          div.classList.add('produto');
       
-      // adiciona cada novo produto criado dentro do container principal de produtos na tela.
-      listaProdutos.appendChild(div);
-    });
-  }
+          // Imagem principal (default: primeira variação)
+          const imagemPrincipal = document.createElement('img');
+          imagemPrincipal.classList.add('produto-img');
+          imagemPrincipal.src = produto.variacoes[0].imagem;
+          imagemPrincipal.alt = produto.nome;
+      
+          // Nome, marca, preço
+          const marca = document.createElement('p');
+          marca.classList.add('produto-marca');
+          marca.textContent = produto.marca;
+      
+          const nome = document.createElement('p');
+          nome.classList.add('produto-nome');
+          nome.textContent = produto.nome;
+      
+          const preco = document.createElement('p');
+          preco.classList.add('produto-preco');
+          preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+      
+          // Cores
+          const variacoesDiv = document.createElement('div');
+          variacoesDiv.classList.add('produto-variacoes');
+      
+          produto.variacoes.forEach((variacao, index) => {
+            const corBolinha = document.createElement('span');
+            corBolinha.classList.add('cor-bolinha');
+            if (index === 0) corBolinha.classList.add('ativa'); // bolinha ativa inicial
+            corBolinha.style.backgroundColor = variacao.corHex;
+            corBolinha.title = variacao.cor;
+      
+            // Evento de clique na bolinha
+            corBolinha.addEventListener('click', () => {
+              imagemPrincipal.src = variacao.imagem;
+      
+              // Remove classe ativa de todas
+              const todasBolinhas = variacoesDiv.querySelectorAll('.cor-bolinha');
+              todasBolinhas.forEach(b => b.classList.remove('ativa'));
+      
+              // Ativa só a clicada
+              corBolinha.classList.add('ativa');
+            });
+      
+            variacoesDiv.appendChild(corBolinha);
+          });
+      
+          // Montagem do produto
+          div.appendChild(imagemPrincipal);
+          div.appendChild(variacoesDiv);
+          div.appendChild(marca);
+          div.appendChild(nome);
+          div.appendChild(preco);
+      
+          listaProdutos.appendChild(div);
+        });
+      }
 
   renderizarProdutos();
 
