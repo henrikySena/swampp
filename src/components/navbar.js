@@ -93,7 +93,13 @@ export function criarNavbar() {
   // Título centralizado
   const navCenter = document.createElement('div');
   navCenter.classList.add('nav-center');
-  navCenter.textContent = navbarLinks.centro;
+
+  // Adiciona o link para #home
+  const centerLink = document.createElement('a');
+  centerLink.href = '#home';
+  centerLink.textContent = navbarLinks.centro;
+
+  navCenter.appendChild(centerLink);
 
   // Ícones à direita
   const navRight = document.createElement('div');

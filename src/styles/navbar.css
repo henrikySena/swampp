@@ -9,7 +9,7 @@
   transition: all 0.3s ease;
 }
 .navbar.blur {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -104,8 +104,16 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
 
-  transform: translate(-50%, -10%); /* move metade da largura e altura */
+.nav-center a {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Herda a cor do elemento pai */
+  transition: color 0.3s ease; /* Adiciona transição suave */
+}
+
+.nav-center a:hover {
+  color: #f0f0f0; /* Cor ao passar o mouse */
 }
 
 .nav-right svg {

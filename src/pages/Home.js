@@ -1,5 +1,5 @@
 import { navbarLinks, criarNavbar } from '../components/navbar.js';
-import { produtos } from '../../data/Produtos.js';
+import { produtosEmDestaque } from '../../data/Produtos.js';
 import '../styles/produtos.css';
 import '../styles/home.css';
 
@@ -35,49 +35,88 @@ export function renderHome() {
 
       </div>
 
-      <div class="produtos" id="lista-produtos"></div>
+      <div class="produtos" id="lista-produtosEmDestaque"></div>
     </section>
 
 
-
-
-
-
-    <section class="eco-section">
-
-      <div class="inteira">
-        <div class="metade metade-cima">
-          <div class="metade1">
-            <div class="metadinha1">Metadinha1</div>
-          </div>
-          <div class="metade2">
-            <div class="metadinha2-cima">Metadinha 2 Cima</div>
-            <div class="metadinha2-baixo">Metadinha 2 Baixo</div>
-          </div>
-          <div class="metade3">
-            <div class="metadinha3-cima">Metadinha 3 Cima</div>
-            <div class="metadinha3-meio">Metadinha 3 Meio</div>
-            <div class="metadinha3-baixo">Metadinha 3 Baixo</div>
-          </div>
-        </div>
-        <div class="metade metade-baixo">Metade Baixo</div>
-      </div>
-
-      <div class="eco-highlight">
-        <div class="highlight-text">
-          <h2>Melhores Produtos</h2>
-          <p>De orgânicos a naturais — cada escolha conta para preservar a natureza.</p>
-          <div class="highlight-tags">
-            <span>Natureza</span>
-            <span>Cuidado</span>
-            <span>Pureza</span>
-            <span>Estilo de vida</span>
-          </div>
-          <a href="#" class="highlight-button">Saiba mais</a>
-        </div>
-      </div>
+    <section class="home-banner">
     </section>
+
+
+    <section class="text-home-container">
+      <h2 class="titulo-home-container">Lorem ipsum dolor sit amet.</h2>
+      <p class="paragrafo-home-container">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+      nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+
+<section class="home-grid">
+  <div class="inteira">
+    <div class="metade-cima">
+      <div class="metade1">
+        <div class="metadinha1">
+          <a href="/pagina1.html" class="grid-btn" id="btn1">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="metade2">
+        <div class="metadinha2-cima">
+          <a href="#" class="grid-btn" id="btn2">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="metadinha2-baixo">
+          <a href="#" class="grid-btn" id="btn3">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="metade3">
+        <div class="metadinha3-cima">
+          <a href="#" class="grid-btn" id="btn4">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="metadinha3-meio">
+          <a href="#" class="grid-btn" id="btn5">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="metadinha3-baixo">
+          <a href="#" class="grid-btn" id="btn6">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+        <div class="metade-baixo">
+          <a href="#" class="grid-btn2" id="btn6">
+            Loren ipsum dolor
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+    </div>
+
+  </div>
+</section>
+
+
   `;
+
+  // <div class="highlight-text">
+  //   <h2>Os melhores produtos</h2>
+  //   <p>De orgânicos a naturais — cada escolha conta para preservar a natureza.</p>
+  //   <div class="highlight-tags">
+  //     <span>Natureza</span>
+  //     <span>Cuidado</span>
+  //     <span>Pureza</span>
+  //     <span>Estilo de vida</span>
+  //   </div>
+  //   <a href="#" class="highlight-button">Saiba mais</a>
+  // </div>
+
 
   // Carousel
   let currentIndex = 0;
@@ -115,21 +154,21 @@ export function renderHome() {
     restartAutoSlide();
   });
 
-  // Produtos
-  const listaProdutos = document.getElementById('lista-produtos');
+  // produtosEmDestaque
+  const listaprodutosEmDestaque = document.getElementById('lista-produtosEmDestaque');
 
-  function renderizarProdutos(categoriaSelecionada = "todos") {
-    listaProdutos.innerHTML = "";
+  function renderizarprodutosEmDestaque(categoriaSelecionada = "todos") {
+    listaprodutosEmDestaque.innerHTML = "";
   
-    const produtosFiltrados = categoriaSelecionada === "todos"
-      ? produtos
-      : produtos.filter(prod => 
+    const produtosEmDestaqueFiltrados = categoriaSelecionada === "todos"
+      ? produtosEmDestaque
+      : produtosEmDestaque.filter(prod => 
           Array.isArray(prod.categoria) 
             ? prod.categoria.includes(categoriaSelecionada) 
             : prod.categoria === categoriaSelecionada
         );
   
-        produtosFiltrados.forEach(produto => {
+        produtosEmDestaqueFiltrados.forEach(produto => {
           const div = document.createElement('div');
           div.classList.add('produto');
       
@@ -185,11 +224,11 @@ export function renderHome() {
           div.appendChild(nome);
           div.appendChild(preco);
       
-          listaProdutos.appendChild(div);
+          listaprodutosEmDestaque.appendChild(div);
         });
       }
 
-  renderizarProdutos();
+  renderizarprodutosEmDestaque();
 
   const botoesFiltro = document.querySelectorAll('.filtro-btn');
   botoesFiltro.forEach(botao => {
@@ -201,7 +240,7 @@ export function renderHome() {
     botao.classList.add('ativo');
 
     const categoria = botao.getAttribute('data-categoria');
-    renderizarProdutos(categoria);
+    renderizarprodutosEmDestaque(categoria);
   });
 });
 }
