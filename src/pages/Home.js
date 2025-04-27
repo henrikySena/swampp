@@ -23,7 +23,7 @@ export function renderHome() {
         <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
       </div>
     </section>
-
+    
     <section class="destaques">
       <h2 class="titulo-destaques">Destaques da semana</h2>
 
@@ -36,6 +36,46 @@ export function renderHome() {
       </div>
 
       <div class="produtos" id="lista-produtos"></div>
+    </section>
+
+
+
+
+
+
+    <section class="eco-section">
+
+      <div class="inteira">
+        <div class="metade metade-cima">
+          <div class="metade1">
+            <div class="metadinha1">Metadinha1</div>
+          </div>
+          <div class="metade2">
+            <div class="metadinha2-cima">Metadinha 2 Cima</div>
+            <div class="metadinha2-baixo">Metadinha 2 Baixo</div>
+          </div>
+          <div class="metade3">
+            <div class="metadinha3-cima">Metadinha 3 Cima</div>
+            <div class="metadinha3-meio">Metadinha 3 Meio</div>
+            <div class="metadinha3-baixo">Metadinha 3 Baixo</div>
+          </div>
+        </div>
+        <div class="metade metade-baixo">Metade Baixo</div>
+      </div>
+
+      <div class="eco-highlight">
+        <div class="highlight-text">
+          <h2>Melhores Produtos</h2>
+          <p>De orgânicos a naturais — cada escolha conta para preservar a natureza.</p>
+          <div class="highlight-tags">
+            <span>Natureza</span>
+            <span>Cuidado</span>
+            <span>Pureza</span>
+            <span>Estilo de vida</span>
+          </div>
+          <a href="#" class="highlight-button">Saiba mais</a>
+        </div>
+      </div>
     </section>
   `;
 
