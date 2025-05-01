@@ -1,0 +1,48 @@
+/* carrossel/ slides ------------------------------------------------------------- */
+.carousel {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+    position: relative;
+  }
+  .slides {
+    display: flex;
+    width: 700%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    /* animation: slideAnimation 12s infinite; */
+  }
+  .slide {
+    width: 100vw;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white; /* Cor de fundo preta */
+    color: black; /* Cor do ícone */
+    border: none;
+    font-size: 0.7rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Torna o botão circular */
+    width: 30px; /* Largura do círculo */
+    height: 30px; /* Altura do círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+  }
+  
+  
+  .prev {
+    left: 2rem;
+  }
+  .next {
+    right: 2rem;
+  }
