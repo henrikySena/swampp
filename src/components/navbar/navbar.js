@@ -1,4 +1,4 @@
-import '../../src/styles/navbar.css';
+import './navbar.css';
 
 export const navbarLinks = {
   esquerda: [
