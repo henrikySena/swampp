@@ -16,13 +16,13 @@ body, html {
 
 /* Largura da barra */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 4px;
   background-color: #000;
 }
 
 /* Fundo da barra */
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  border-radius: 10000px;
 }
 
 /* Cor da alça da barra */
@@ -31,10 +31,8 @@ body, html {
   border-radius: 100000px;
 }
 
-/* Ao passar o mouse */
-::-webkit-scrollbar-thumb:hover {
-  background: #888;
-}
+
+
 
 
 #produtos {

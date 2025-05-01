@@ -15,23 +15,31 @@ export function renderHome() {
     <section class="hero" id="home">
       <div class="carousel">
         <div class="slides" id="slides">
-          <img src="../../public/home/img-home1.png" class="slide" alt="Slide 1">
-          <img src="../../public/home/img-home2.png" class="slide" alt="Slide 2">
-          <img src="../../public/home/img-home3.png" class="slide" alt="Slide 3">
+          <img src="/home/carousel/img-carousel.png" class="slide" alt="Slide 1">
+          <img src="/home/carousel/img-carousel1.png" class="slide" alt="Slide 2">
+          <img src="/home/carousel/img-carousel2.png" class="slide" alt="Slide 3">
+          <img src="/home/carousel/img-carousel3.png" class="slide" alt="Slide- 4">
+          <img src="/home/carousel/img-carousel4.png" class="slide" alt="Slide- 5">
+          <img src="/home/carousel/img-carousel5.png" class="slide" alt="Slide 6">
+          <img src="/home/carousel/img-carousel6.png" class="slide" alt="Slide 7">
         </div>
         <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
         <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
       </div>
+      
     </section>
     
+
+
+
     <section class="destaques">
-      <h2 class="titulo-destaques">Destaques da semana</h2>
+      <h2 class="titulo-destaques">Destaques da semana!</h2>
 
       <div class="filtros-categorias">
         <a class="filtro-btn" data-categoria="todos">Todos</a>
-        <a class="filtro-btn" data-categoria="masculino">Masculino</a>
-        <a class="filtro-btn" data-categoria="feminino">Feminino</a>
-        <a class="filtro-btn" data-categoria="infantil">Infantil</a>
+        <a class="filtro-btn" data-categoria="masculino">Roupas</a>
+        <a class="filtro-btn" data-categoria="feminino">Equipamentos</a>
+        <a class="filtro-btn" data-categoria="infantil">Acessórios</a>
 
       </div>
 
@@ -44,11 +52,11 @@ export function renderHome() {
 
 
     <section class="text-home-container">
-      <h2 class="titulo-home-container">Lorem ipsum dolor sit amet.</h2>
-      <p class="paragrafo-home-container">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-      nisi ut aliquip ex ea commodo consequat.</p>
+      <h2 class="titulo-home-container">Você sabia que sua compra é consciente?</h2>
+      <p class="paragrafo-home-container">Na Swampp, 35% do valor das vendas é 
+      destinado a ações de preservação ambiental.
+      Mais do que incentivar a aventura e a conexão com a natureza, temos a missão 
+      de contribuir para a conservação do meio ambiente e do bem-estar de todos os seres.</p>
     </section>
 
 <section class="home-grid">
@@ -56,34 +64,42 @@ export function renderHome() {
     <div class="metade-cima">
       <div class="metade1">
         <div class="metadinha1">
+        <div class="grid-tag">roupas</div>
           <a href="/pagina1.html" class="grid-btn" id="btn1">
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
       <div class="metade2">
+
         <div class="metadinha2-cima">
+        <div class="grid-tag">equipamentos</div>
           <a href="#" class="grid-btn" id="btn2">
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
+
         <div class="metadinha2-baixo">
+        <div class="grid-tag">acessórios</div>
           <a href="#" class="grid-btn" id="btn3">
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
+
       <div class="metade3">
         <div class="metadinha3-cima">
           <a href="#" class="grid-btn" id="btn4">
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
+
         <div class="metadinha3-meio">
           <a href="#" class="grid-btn" id="btn5">
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
+
         <div class="metadinha3-baixo">
           <a href="#" class="grid-btn" id="btn6">
             <i class="fa-solid fa-arrow-right"></i>
@@ -93,8 +109,15 @@ export function renderHome() {
       
     </div>
         <div class="metade-baixo">
+        <div class="varias-tags">
+          <div class="grid-tag">as novidades</div>
+          <div class="grid-tag">aparecerão</div>
+          <div class="grid-tag">dessa forma:</div>
+          <div class="grid-tag">novidade</div>
+        </div>
+
           <a href="#" class="grid-btn2" id="btn6">
-            Loren ipsum dolor
+            Conhecer mais sobre
             <i class="fa-solid fa-arrow-right"></i>
           </a>
     </div>
@@ -105,17 +128,6 @@ export function renderHome() {
 
   `;
 
-  // <div class="highlight-text">
-  //   <h2>Os melhores produtos</h2>
-  //   <p>De orgânicos a naturais — cada escolha conta para preservar a natureza.</p>
-  //   <div class="highlight-tags">
-  //     <span>Natureza</span>
-  //     <span>Cuidado</span>
-  //     <span>Pureza</span>
-  //     <span>Estilo de vida</span>
-  //   </div>
-  //   <a href="#" class="highlight-button">Saiba mais</a>
-  // </div>
 
 
   // Carousel
