@@ -120,3 +120,12 @@ export function criarNavbar() {
   nav.appendChild(navContainer);
   document.body.prepend(nav);
 }
+
+
+const carrinhoLink = document.querySelector('a[href="#carrinho"]');
+if (carrinhoLink) {
+  carrinhoLink.addEventListener('click', (e) => {
+    e.preventDefault(); // Impede a navegação padrão
+    carregarCarrinho(); // Função que carrega o conteúdo do carrinho
+  });
+}

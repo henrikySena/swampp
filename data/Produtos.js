@@ -3,7 +3,7 @@
 export const produtosEmDestaque = [
   {
     nome: "Casaco Impermeável",
-    marca: "Tribord",
+    marca: "Quechua",
     preco: 89.99,
     categoria: "roupa",
     imagens: [
@@ -38,44 +38,31 @@ export const produtosEmDestaque = [
     ]
   },
   {
-    nome: "Barraca de Camping MH100 para 3 pessoas",
+    nome: "Barraca de Camping MH100 para 4 pessoas",
     marca: "Quechua",
-    preco: 349.99,
+    preco: 449.99,
     categoria: "equipamento",
     imagens: [
-      "/produtos/equipamentos/barracas/mh100-3p/mh100-3pessoas.jpg",
-      "/produtos/equipamentos/barracas/mh100-3p/mh100-3pessoas1.jpg",
-      "/produtos/equipamentos/barracas/mh100-3p/mh100-3pessoas2.jpg",
-      "/produtos/equipamentos/barracas/mh100-3p/mh100-3pessoas3.jpg",
-      "/produtos/equipamentos/barracas/mh100-3p/mh100-3pessoas4.jpg"
+      "/produtos/equipamentos/barracas/mh100-4p/mh100-4pessoas.jpg",
+      "/produtos/equipamentos/barracas/mh100-4p/mh100-4pessoas1.jpg",
+      "/produtos/equipamentos/barracas/mh100-4p/mh100-4pessoas2.jpg",
+      "/produtos/equipamentos/barracas/mh100-4p/mh100-4pessoas3.jpg",
+      "/produtos/equipamentos/barracas/mh100-4p/mh100-4pessoas4.jpg"
     ],
     variacoes: []
   },
   {
-    nome: "Mochila de Trilha 30L",
+    nome: "Mochila de Trilha MH500 30 Litros",
     marca: "Quechua",
-    preco: 499.99,
+    preco: 599.99,
     categoria: "acessorio",
     imagens: [
-      "/produtos/roupas/casaco/azul/casaco-azul.jpg",
-      "/produtos/roupas/casaco/azul/casaco-azul1.jpg",
-      "/produtos/roupas/casaco/azul/casaco-azul2.jpg",
-      "/produtos/roupas/casaco/azul/casaco-azul3.jpg",
-      "/produtos/roupas/casaco/azul/casaco-azul4.jpg"
+      "/produtos/acessorios/mochilas/mh500-30L/mh500-30L.jpg",
+      "/produtos/acessorios/mochilas/mh500-30L/mh500-30L1.jpg",
+      "/produtos/acessorios/mochilas/mh500-30L/mh500-30L2.jpg",
+      "/produtos/acessorios/mochilas/mh500-30L/mh500-30L-descrition.jpg",
     ],
-    variacoes: [
-      {
-        cor: "Azul",
-        corHex: "#5D7A95",
-        imagens: [
-          "/produtos/roupas/casaco/azul/casaco-azul.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul1.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul2.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul3.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul4.jpg"
-        ]
-      }
-    ]
+    variacoes: []
   },
 ]
 
