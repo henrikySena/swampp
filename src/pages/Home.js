@@ -19,7 +19,7 @@ export function renderHome() {
           <img src="/home/carousel/img-carousel.png" class="slide" alt="Slide 1">
           <img src="/home/carousel/img-carousel1.png" class="slide" alt="Slide 2">
           <img src="/home/carousel/img-carousel2.png" class="slide" alt="Slide 3">
-          <img src="/home/carousel/img-carousel3.png" class="slide" alt="Slide- 4">
+          <img src="/home/carousel/img-carousel3.png" class="slide" alt="Slide 4">
           <img src="/home/carousel/img-carousel4.png" class="slide" alt="Slide 5">
           <img src="/home/carousel/img-carousel5.png" class="slide" alt="Slide 6">
           <img src="/home/carousel/img-carousel6.png" class="slide" alt="Slide 7">
@@ -32,7 +32,7 @@ export function renderHome() {
     <section class="destaques">
       <h2 class="titulo-destaques">Destaques da semana!</h2>
       <div class="filtros-categorias">
-        <a class="filtro-btn" data-categoria="todos">Todos</a>
+        <a class="filtro-btn ativo" data-categoria="todos">Todos</a>
         <a class="filtro-btn" data-categoria="roupa">Roupas</a>
         <a class="filtro-btn" data-categoria="equipamento">Equipamentos</a>
         <a class="filtro-btn" data-categoria="acessorio">Acessórios</a>
@@ -72,7 +72,6 @@ export function renderHome() {
               </a>
             </div>
           </div>
-
           <div class="metade3">
             <div class="metadinha3-cima">
               <a href="#" class="grid-btn" id="btn4">
@@ -104,17 +103,17 @@ export function renderHome() {
     </section>
   `;
 
-  // exibe o carrousel através da função
+  // Exibe o carrossel
   carousel();
 
-  // filtragem de produtos em destaque
-  const listaprodutosEmDestaque = document.getElementById('lista-produtosEmDestaque');
+  // Filtragem de produtos em destaque
+  const listaProdutosEmDestaque = document.getElementById('lista-produtosEmDestaque');
 
-  function renderizarprodutosEmDestaque(categoriaSelecionada = "todos") {
-    listaprodutosEmDestaque.innerHTML = "";
+  function renderizarProdutosEmDestaque(categoriaSelecionada = "todos") {
+    listaProdutosEmDestaque.innerHTML = "";
 
-    // filtragem dos itens
-    const produtosEmDestaqueFiltrados = categoriaSelecionada === "todos"
+    // Filtragem dos itens
+    const produtosFiltrados = categoriaSelecionada === "todos"
       ? produtosEmDestaque
       : produtosEmDestaque.filter(prod => 
           Array.isArray(prod.categoria) 
@@ -122,8 +121,8 @@ export function renderHome() {
             : prod.categoria === categoriaSelecionada
         );
 
-    // renderização dos produtos em destaque
-    produtosEmDestaqueFiltrados.forEach(produto => {
+    // Renderização dos produtos filtrados
+    produtosFiltrados.forEach((produto, index) => {
       const div = document.createElement('div');
       div.classList.add('produto');
 
@@ -153,15 +152,17 @@ export function renderHome() {
       setaDir.classList.add('product-arrow', 'arrow-right');
 
       // Lógica das setas
-      setaEsq.addEventListener('click', () => {
+      setaEsq.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que o clique nas setas acione o evento da div
         const imagens = variacaoAtual ? variacaoAtual.imagens : produto.imagens;
         imagemAtual = (imagemAtual - 1 + imagens.length) % imagens.length;
         imagemPrincipal.src = imagens[imagemAtual];
       });
 
-      setaDir.addEventListener('click', () => {
+      setaDir.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que o clique nas setas acione o evento da div
         const imagens = variacaoAtual ? variacaoAtual.imagens : produto.imagens;
-        imagemAtual = (imagemAtual + 1) % (variacaoAtual ? variacaoAtual.imagens : produto.imagens).length;
+        imagemAtual = (imagemAtual + 1) % imagens.length;
         imagemPrincipal.src = imagens[imagemAtual];
       });
 
@@ -176,14 +177,15 @@ export function renderHome() {
         const variacoesDiv = document.createElement('div');
         variacoesDiv.classList.add('produto-variacoes');
 
-        produto.variacoes.forEach((variacao, index) => {
+        produto.variacoes.forEach((variacao, idx) => {
           const corBolinha = document.createElement('span');
           corBolinha.classList.add('cor-bolinha');
-          if (index === 0) corBolinha.classList.add('ativa');
+          if (idx === 0) corBolinha.classList.add('ativa');
           corBolinha.style.backgroundColor = variacao.corHex;
           corBolinha.title = variacao.cor;
 
-          corBolinha.addEventListener('click', () => {
+          corBolinha.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que o clique nas bolinhas acione o evento da div
             variacaoAtual = variacao;
             imagemAtual = 0;
             imagemPrincipal.src = variacao.imagens[imagemAtual];
@@ -223,36 +225,40 @@ export function renderHome() {
       botaoCarrinho.textContent = 'Adicionar ao Carrinho';
       botaoCarrinho.classList.add('botao-carrinho');
 
-      // Cria um produto simplificado para salvar no carrinho
-      botaoCarrinho.addEventListener('click', () => {
+      botaoCarrinho.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que o clique no botão acione o evento da div
         const produtoParaCarrinho = {
-          id: produto.id,
           nome: produto.nome,
           preco: produto.preco,
-          imagem: (variacaoAtual ? variacaoAtual.imagens[0] : produto.imagens[0]),
+          imagem: variacaoAtual ? variacaoAtual.imagens[0] : produto.imagens[0],
         };
         adicionarAoCarrinho(produtoParaCarrinho);
       });
 
       div.appendChild(botaoCarrinho);
 
-      listaprodutosEmDestaque.appendChild(div);
+      // Link para a página de visualização do produto com o índice
+      div.addEventListener('click', (e) => {
+        // Evita que o clique em elementos interativos acione a navegação
+        if (e.target.closest('.product-arrow, .cor-bolinha, .botao-carrinho')) return;
+        window.location.hash = `#produto?id=${produto.id}`;
+      });
+
+      listaProdutosEmDestaque.appendChild(div);
     });
   }
 
-  renderizarprodutosEmDestaque();
+  // Renderiza os produtos inicialmente
+  renderizarProdutosEmDestaque();
 
+  // Configura os filtros
   const botoesFiltro = document.querySelectorAll('.filtro-btn');
   botoesFiltro.forEach(botao => {
     botao.addEventListener('click', () => {
-      // Remove a classe 'ativo' de todos
       botoesFiltro.forEach(btn => btn.classList.remove('ativo'));
-
-      // Adiciona no botão clicado
       botao.classList.add('ativo');
-
       const categoria = botao.getAttribute('data-categoria');
-      renderizarprodutosEmDestaque(categoria);
+      renderizarProdutosEmDestaque(categoria);
     });
   });
 }
