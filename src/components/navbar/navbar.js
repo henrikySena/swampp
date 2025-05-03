@@ -40,7 +40,6 @@ export const navbarLinks = {
                   a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
                   1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
         </svg>
-
       `
     },
     {
@@ -59,20 +58,12 @@ export const navbarLinks = {
   centro: 'swampp',
 };
 
-
 export function criarNavbar() {
+  // Remove navbar antiga se já existir
+  const oldNav = document.querySelector('.navbar');
+  if (oldNav) oldNav.remove();
 
-  // adiciona a animação de blur para a navbar após o scroll
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 10) {
-      navbar.classList.add('blur');
-    } else {
-      navbar.classList.remove('blur');
-    }
-  });
-
-
+  // Cria a navbar
   const nav = document.createElement('nav');
   nav.classList.add('navbar');
 
@@ -82,7 +73,6 @@ export function criarNavbar() {
   // Links à esquerda
   const navLeft = document.createElement('div');
   navLeft.classList.add('nav-left');
-
   navbarLinks.esquerda.forEach(link => {
     const a = document.createElement('a');
     a.href = link.url ?? "#";
@@ -93,18 +83,14 @@ export function criarNavbar() {
   // Título centralizado
   const navCenter = document.createElement('div');
   navCenter.classList.add('nav-center');
-
-  // Adiciona o link para #home
   const centerLink = document.createElement('a');
   centerLink.href = '#home';
   centerLink.textContent = navbarLinks.centro;
-
   navCenter.appendChild(centerLink);
 
   // Ícones à direita
   const navRight = document.createElement('div');
   navRight.classList.add('nav-right');
-
   navbarLinks.direita.forEach(link => {
     const a = document.createElement('a');
     a.href = link.url ?? "#";
@@ -112,20 +98,46 @@ export function criarNavbar() {
     navRight.appendChild(a);
   });
 
-
   // Monta tudo
   navContainer.appendChild(navLeft);
   navContainer.appendChild(navCenter);
   navContainer.appendChild(navRight);
   nav.appendChild(navContainer);
   document.body.prepend(nav);
-}
 
+  // Função para atualizar o estilo da navbar
+  const updateNavbarStyle = () => {
+    const hash = window.location.hash;
+    const isHomePage = (hash === '' || hash === '#home');
 
-const carrinhoLink = document.querySelector('a[href="#carrinho"]');
-if (carrinhoLink) {
-  carrinhoLink.addEventListener('click', (e) => {
-    e.preventDefault(); // Impede a navegação padrão
-    carregarCarrinho(); // Função que carrega o conteúdo do carrinho
-  });
+    // Remove listeners de scroll anteriores
+    window.onscroll = null;
+
+    if (isHomePage) {
+      nav.classList.remove('opacity-full');
+      // Aplica efeito de blur com scroll
+      window.onscroll = () => {
+        if (window.scrollY > 10) {
+          nav.classList.add('blur');
+        } else {
+          nav.classList.remove('blur');
+        }
+      };
+      // Aplica o estado inicial
+      if (window.scrollY > 10) {
+        nav.classList.add('blur');
+      } else {
+        nav.classList.remove('blur');
+      }
+    } else {
+      nav.classList.add('opacity-full');
+      nav.classList.remove('blur');
+    }
+  };
+
+  // Inicializa o estilo
+  updateNavbarStyle();
+
+  // Listener para mudanças de hash (navegação SPA)
+  window.addEventListener('hashchange', updateNavbarStyle);
 }

@@ -1,7 +1,6 @@
-// isso está sendo usado como nosso banco de dados de produtos
-
 export const produtosEmDestaque = [
   {
+    id: 1, // Adicionado
     nome: "Casaco Impermeável",
     marca: "Quechua",
     preco: 89.99,
@@ -38,6 +37,7 @@ export const produtosEmDestaque = [
     ]
   },
   {
+    id: 2, // Adicionado
     nome: "Barraca de Camping MH100 para 4 pessoas",
     marca: "Quechua",
     preco: 449.99,
@@ -52,6 +52,7 @@ export const produtosEmDestaque = [
     variacoes: []
   },
   {
+    id: 3, // Adicionado
     nome: "Mochila de Trilha MH500 30 Litros",
     marca: "Quechua",
     preco: 599.99,
@@ -64,11 +65,11 @@ export const produtosEmDestaque = [
     ],
     variacoes: []
   },
-]
+];
 
-// produtos gerais --------------------------------------------------------------------------------------
 export const produtos = [
   {
+    id: 4, // Adicionado
     nome: "Camiseta Lisa de Algodão Peruano",
     marca: "Quechua",
     preco: 49.99,

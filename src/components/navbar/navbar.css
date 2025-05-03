@@ -13,6 +13,11 @@
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
+/* Para a opacidade total em outras páginas */
+.navbar.opacity-full {
+  background-color: rgba(0, 0, 0, 1); /* Opacidade total */
+  transition: background-color 0.3s ease-in-out;
+}
 
 
 
