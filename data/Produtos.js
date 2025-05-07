@@ -11,21 +11,21 @@ export const produtosEmDestaque = [
         cor: "Azul",
         corHex: "#5D7A95",
         imagens: [
-          "/produtos/roupas/casaco/azul/casaco-azul.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul1.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul2.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul3.jpg",
-          "/produtos/roupas/casaco/azul/casaco-azul4.jpg"
+          "/produtos/roupas/casaco-impermeavel-quechua/azul/casaco-azul.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/azul/casaco-azul1.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/azul/casaco-azul2.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/azul/casaco-azul3.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/azul/casaco-azul4.jpg"
         ]
       },
       {
         cor: "Marinho",
         corHex: "#232E3C",
         imagens: [
-          "/produtos/roupas/casaco/marinho/casaco-marinho.jpg",
-          "/produtos/roupas/casaco/marinho/casaco-marinho1.jpg",
-          "/produtos/roupas/casaco/marinho/casaco-marinho2.jpg",
-          "/produtos/roupas/casaco/marinho/casaco-marinho3.jpg"
+          "/produtos/roupas/casaco-impermeavel-quechua/marinho/casaco-marinho.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/marinho/casaco-marinho1.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/marinho/casaco-marinho2.jpg",
+          "/produtos/roupas/casaco-impermeavel-quechua/marinho/casaco-marinho3.jpg"
         ]
       }
     ]
@@ -133,7 +133,7 @@ export const produtosEmDestaque = [
       },
       {
         cor: "Preta",
-        corHex: "#1e1e1e",
+        corHex: "#201C24",
         imagens: [
           "/produtos/roupas/camiseta-masculina-de-pilates-essentials-500-domyos/preta/camiseta-masculina-de-pilates-essentials-500-domyos-preta.jpg",
           "/produtos/roupas/camiseta-masculina-de-pilates-essentials-500-domyos/preta/camiseta-masculina-de-pilates-essentials-500-domyos-preta1.jpg",
@@ -143,6 +143,82 @@ export const produtosEmDestaque = [
       }
       
     ]
+  },
+  {
+    id: 6, 
+    nome: "Bermuda Masculina de Surf Bolso com Zíper e Cintura Elástica 150 Olaian",
+    marca: "Olaian",
+    preco: 99.99,
+    categoria: "roupa",
+    imagens: [
+      "/produtos/roupas/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian.jpg",
+      "/produtos/roupas/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian1.jpg",
+      "/produtos/roupas/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian2.jpg",
+      "/produtos/roupas/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian3.jpg",
+      "/produtos/roupas/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian/bermuda-masculina-de-surf-bolso-com-ziper-e-cintura-elastica-150-olaian4.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 7, 
+    nome: "Top Feminino de Academia de Sustentação Leve",
+    marca: "Domyos",
+    preco: 89.99,
+    categoria: "roupa",
+    imagens: [
+      "/produtos/roupas/top-feminino-de-academia-de-sustentacao-leve/top-feminino-de-academia-de-sustentacao-leve.jpg",
+      "/produtos/roupas/top-feminino-de-academia-de-sustentacao-leve/top-feminino-de-academia-de-sustentacao-leve1.jpg",
+      "/produtos/roupas/top-feminino-de-academia-de-sustentacao-leve/top-feminino-de-academia-de-sustentacao-leve2.jpg",
+      "/produtos/roupas/top-feminino-de-academia-de-sustentacao-leve/top-feminino-de-academia-de-sustentacao-leve3.jpg",
+      "/produtos/roupas/top-feminino-de-academia-de-sustentacao-leve/top-feminino-de-academia-de-sustentacao-leve4.jpg",
+     ],
+    variacoes: []
+  },
+  {
+    id: 8, 
+    nome: "Maiô modelador feminino de natação Kaipearl New",
+    marca: "Nabaiji",
+    preco: 149.99,
+    categoria: "roupa",
+    imagens: [
+      "/produtos/roupas/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji.jpg",
+      "/produtos/roupas/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji1.jpg",
+      "/produtos/roupas/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji2.jpg",
+      "/produtos/roupas/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji3.jpg",
+      "/produtos/roupas/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji/maio-modelador-feminino-de-natacao-kaipearl-new-nabaiji4.jpg",
+     ],
+    variacoes: []
+  },
+  {
+    id: 9, 
+    nome: "Chápeu de Bebê Natação Anti-UV Reversível",
+    marca: "Nabaiji",
+    preco: 54.99,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/chapeus/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji.jpg",
+      "/produtos/acessorios/chapeus/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji1.jpg",
+      "/produtos/acessorios/chapeus/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji2.jpg",
+      "/produtos/acessorios/chapeus/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji/chapeu-de-bebe-natacao-anti-uv-reversivel-nabaiji3.jpg",
+      
+     ],
+    variacoes: []
+  },
+  {
+    id: 10, 
+    nome: "Saco de Dormir de Camping Arpenaz 0ºC",
+    marca: "Quechua",
+    preco: 474.99,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/equipamentos/saco-de-dormir/saco-de-dormir-de-camping-arpenaz-0ºC-quechua/saco-de-dormir-de-camping-arpenaz-0ºC-quechua.jpg",
+      "/produtos/equipamentos/saco-de-dormir/saco-de-dormir-de-camping-arpenaz-0ºC-quechua/saco-de-dormir-de-camping-arpenaz-0ºC-quechua1.jpg",
+      "/produtos/equipamentos/saco-de-dormir/saco-de-dormir-de-camping-arpenaz-0ºC-quechua/saco-de-dormir-de-camping-arpenaz-0ºC-quechua2.jpg",
+      "/produtos/equipamentos/saco-de-dormir/saco-de-dormir-de-camping-arpenaz-0ºC-quechua/saco-de-dormir-de-camping-arpenaz-0ºC-quechua3.jpg",
+      "/produtos/equipamentos/saco-de-dormir/saco-de-dormir-de-camping-arpenaz-0ºC-quechua/saco-de-dormir-de-camping-arpenaz-0ºC-quechua4.jpg",
+      
+     ],
+    variacoes: []
   },
   
 ];
