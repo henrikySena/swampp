@@ -235,7 +235,7 @@ export function renderHome() {
         adicionarAoCarrinho(produtoParaCarrinho);
       });
 
-      div.appendChild(botaoCarrinho);
+      //div.appendChild(botaoCarrinho);
 
       // Link para a página de visualização do produto com o índice
       div.addEventListener('click', (e) => {

@@ -23,7 +23,7 @@ export function renderProduto() {
   let variacaoAtual = produto.variacoes?.[0] || null;
   let imagens = produto.imagens || [];
   if (variacaoAtual) {
-    imagens = variacaoAtual.imagens || (variacaoAtual.imagem ? [variacao.imagem] : []);
+    imagens = variacaoAtual.imagens || (variacaoAtual.imagem ? [variacaoAtual.imagem] : []);
   }
 
   // Criação do container principal para o produto
@@ -107,11 +107,15 @@ export function renderProduto() {
   botaoCarrinho.classList.add('botao-carrinho');
   botaoCarrinho.setAttribute('aria-label', `Adicionar ${produto.nome} ao carrinho`);
   botaoCarrinho.addEventListener('click', () => {
+    const imagemSelecionada = variacaoAtual?.imagens?.[0] || variacaoAtual?.imagem || imagens[0] || '';
+
     const produtoParaCarrinho = {
       nome: produto.nome,
       preco: produto.preco,
-      imagem: imagens[0] || '',
+      cor: variacaoAtual?.cor || null,
+      imagem: imagemSelecionada
     };
+
     adicionarAoCarrinho(produtoParaCarrinho);
   });
 
