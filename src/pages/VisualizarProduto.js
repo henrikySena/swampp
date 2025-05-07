@@ -1,5 +1,6 @@
 import { produtosEmDestaque, produtos } from '../../data/Produtos.js';
 import { adicionarAoCarrinho } from './Carrinho.js';
+import "../styles/visualizarProduto.css";
 
 export function renderProduto() {
   const main = document.querySelector('main');
@@ -22,19 +23,19 @@ export function renderProduto() {
   let variacaoAtual = produto.variacoes?.[0] || null;
   let imagens = produto.imagens || [];
   if (variacaoAtual) {
-    // Para produtosEmDestaque, variações têm 'imagens' (array)
-    // Para produtos, variações têm 'imagem' (string)
-    imagens = variacaoAtual.imagens || (variacaoAtual.imagem ? [variacaoAtual.imagem] : []);
+    imagens = variacaoAtual.imagens || (variacaoAtual.imagem ? [variacao.imagem] : []);
   }
 
+  // Criação do container principal para o produto
   const container = document.createElement('div');
-  container.classList.add('detalhes-produto');
+  container.classList.add('produto-container');  // Classe para o contêiner flexível
 
-  // Imagens lado a lado
+  // Container das imagens (vai ocupar 60% da tela)
   const imagensDiv = document.createElement('div');
   imagensDiv.classList.add('imagens-lado-a-lado');
+  imagensDiv.style.flex = "60%";  // Ocupa 60% da largura da tela
 
-  // Renderiza as imagens iniciais
+  // Função para renderizar as imagens
   function renderizarImagens(imagensArray) {
     imagensDiv.innerHTML = '';
     if (!imagensArray || imagensArray.length === 0) {
@@ -51,7 +52,14 @@ export function renderProduto() {
       imagensDiv.appendChild(img);
     });
   }
+
+  // Renderiza as imagens iniciais
   renderizarImagens(imagens);
+
+  // Container das informações (vai ocupar 40% da tela)
+  const informacoesDiv = document.createElement('div');
+  informacoesDiv.classList.add('informacoes-produto');
+  informacoesDiv.style.flex = "40%";  // Ocupa 40% da largura da tela
 
   // Marca
   const marca = document.createElement('p');
@@ -83,11 +91,8 @@ export function renderProduto() {
 
       corBolinha.addEventListener('click', () => {
         variacaoAtual = variacao;
-        // Atualiza as imagens com base na variação
         const novasImagens = variacao.imagens || (variacao.imagem ? [variacao.imagem] : []);
         renderizarImagens(novasImagens);
-
-        // Atualiza a classe 'ativa' nas bolinhas
         variacoesDiv.querySelectorAll('.cor-bolinha').forEach(b => b.classList.remove('ativa'));
         corBolinha.classList.add('ativa');
       });
@@ -110,7 +115,13 @@ export function renderProduto() {
     adicionarAoCarrinho(produtoParaCarrinho);
   });
 
-  // Monta o contêiner
-  container.append(imagensDiv, marca, nome, preco, variacoesDiv, botaoCarrinho);
+  // Adiciona as informações no container de informações
+  informacoesDiv.append(marca, nome, preco, variacoesDiv, botaoCarrinho);
+
+  // Monta o contêiner principal (contendo imagens e informações)
+  container.appendChild(imagensDiv);
+  container.appendChild(informacoesDiv);
+
+  // Adiciona o container à página
   main.appendChild(container);
 }
