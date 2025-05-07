@@ -286,6 +286,7 @@
 
 .metadinha1, .metadinha2-cima, .metadinha2-baixo, .metadinha3-cima, .metadinha3-meio, .metadinha3-baixo {
   position: relative; /* Necessário para posicionar os botões */
+  background-color: rgba(58, 100, 42, 0.3);
 }
 
 
