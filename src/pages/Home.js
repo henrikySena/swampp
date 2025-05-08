@@ -49,48 +49,48 @@ export function renderHome() {
 
     <section class="home-grid">
       <div class="inteira">
-        <div class="metade-cima">
-          <div class="metade1">
-            <div class="metadinha1">
+        <div class="secao-superior">
+          <div class="coluna1">
+            <div class="bloco1">
               <div class="grid-tag">roupas</div>
               <a href="/pagina1.html" class="grid-btn" id="btn1">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </div>
-          <div class="metade2">
-            <div class="metadinha2-cima">
+          <div class="coluna2">
+            <div class="bloco2-superior">
               <div class="grid-tag">equipamentos</div>
               <a href="#" class="grid-btn" id="btn2">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-            <div class="metadinha2-baixo">
+            <div class="bloco2-inferior">
               <div class="grid-tag">acessórios</div>
               <a href="#" class="grid-btn" id="btn3">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </div>
-          <div class="metade3">
-            <div class="metadinha3-cima">
+          <div class="coluna3">
+            <div class="bloco3-superior">
               <a href="#" class="grid-btn" id="btn4">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-            <div class="metadinha3-meio">
+            <div class="bloco3-central">
               <a href="#" class="grid-btn" id="btn5">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-            <div class="metadinha3-baixo">
+            <div class="bloco3-inferior">
               <a href="#" class="grid-btn" id="btn6">
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </div>
         </div>
-        <div class="metade-baixo">
+        <div class="secao-inferior">
           <div class="varias-tags">
             <div class="grid-tag">as novidades apareceram com essa tag</div>
           </div>
@@ -174,33 +174,47 @@ export function renderHome() {
 
       // Variações de cor (se existirem)
       if (produto.variacoes && produto.variacoes.length > 0) {
+        // Cria o wrapper que SEMPRE estará no DOM
+        const variacoesWrapper = document.createElement('div');
+        variacoesWrapper.classList.add('variacoes-wrapper');
+      
         const variacoesDiv = document.createElement('div');
         variacoesDiv.classList.add('produto-variacoes');
-
+        variacoesDiv.style.display = 'none'; // começa escondido
+      
         produto.variacoes.forEach((variacao, idx) => {
           const corBolinha = document.createElement('span');
           corBolinha.classList.add('cor-bolinha');
           if (idx === 0) corBolinha.classList.add('ativa');
           corBolinha.style.backgroundColor = variacao.corHex;
           corBolinha.title = variacao.cor;
-
+      
           corBolinha.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita que o clique nas bolinhas acione o evento da div
+            e.stopPropagation();
             variacaoAtual = variacao;
             imagemAtual = 0;
             imagemPrincipal.src = variacao.imagens[imagemAtual];
-
-            // Atualiza a classe 'ativa' nas bolinhas
+      
             const todasBolinhas = variacoesDiv.querySelectorAll('.cor-bolinha');
             todasBolinhas.forEach(b => b.classList.remove('ativa'));
             corBolinha.classList.add('ativa');
           });
-
+      
           variacoesDiv.appendChild(corBolinha);
         });
-
-        div.appendChild(variacoesDiv);
+      
+        variacoesWrapper.appendChild(variacoesDiv);
+        div.appendChild(variacoesWrapper); // Adiciona o wrapper já no DOM
+      
+        div.addEventListener('mouseenter', () => {
+          variacoesDiv.style.display = 'flex';
+        });
+      
+        div.addEventListener('mouseleave', () => {
+          variacoesDiv.style.display = 'none';
+        });
       }
+      
 
       // Nome, marca, preço
       const marca = document.createElement('p');

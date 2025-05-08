@@ -220,6 +220,101 @@ export const produtosEmDestaque = [
      ],
     variacoes: []
   },
+  {
+    id: 11, 
+    nome: "Jaqueta Masculina de Corrida Corta-vento Run Wind",
+    marca: "Kalenji",
+    preco: 149.98,
+    categoria: "roupa",
+    imagens: [
+      "/produtos/roupas/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji.jpg",
+      "/produtos/roupas/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji1.jpg",
+      "/produtos/roupas/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji2.jpg",
+      "/produtos/roupas/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji3.jpg",
+      "/produtos/roupas/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji/jaqueta-masculino-de-corrida-corta-vento-run-wind-kalenji4.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 12, 
+    nome: "Bota Masculina de Trilha MH500 Mid Quechua",
+    marca: "Quechua",
+    preco: 799.99,
+    categoria: "roupa",
+    imagens: [],
+    variacoes: [
+      {
+        cor: "Marrom",
+        corHex: "#95613A",
+        imagens: [
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/marrom/bota-masculina-de-trilha-mh500-mid-quechua-marrom.jpg",
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/marrom/bota-masculina-de-trilha-mh500-mid-quechua1-marrom.jpg",
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/marrom/bota-masculina-de-trilha-mh500-mid-quechua2-marrom.jpg",
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/marrom/bota-masculina-de-trilha-mh500-mid-quechua3-marrom.jpg",
+        ]
+      },
+      {
+        cor: "Cinza",
+        corHex: "#7B7A7A",
+        imagens: [
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/cinza/bota-masculina-de-trilha-mh500-mid-quechua-cinza.jpg",
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/cinza/bota-masculina-de-trilha-mh500-mid-quechua-cinza1.jpg",
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/cinza/bota-masculina-de-trilha-mh500-mid-quechua-cinza2.jpg",
+          "/produtos/roupas/bota-masculina-de-trilha-mh500-mid-quechua/cinza/bota-masculina-de-trilha-mh500-mid-quechua-cinza3.jpg",
+        ]
+      }
+    ]
+  },
+  {
+    id: 13, 
+    nome: "Calças moduláveis Feminina trekking na montanha",
+    marca: "Forclaz",
+    preco: 349.99,
+    categoria: "roupa",
+    imagens: [],
+    variacoes: [
+      {
+        cor: "Caqui",
+        corHex: "#B5AB94",
+        imagens: [
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/caqui/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-caqui.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/caqui/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-caqui1.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/caqui/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-caqui2.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/caqui/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-caqui3.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/caqui/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-caqui4.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/caqui/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-caqui5.jpg",
+        ]
+      },
+      {
+        cor: "Azul",
+        corHex: "#3D415D",
+        imagens: [
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/azul/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-azul.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/azul/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-azul1.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/azul/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-azul2.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/azul/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-azul3.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/azul/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-azul4.jpg",
+          "/produtos/roupas/calcas-modulaveis-feminina-trekking-na-montanha-forclaz/azul/calcas-modulaveis-feminina-trekking-na-montanha-forclaz-azul5.jpg",
+        ]
+      }
+    ]
+  },
+  {
+    id: 14, 
+    nome: "Calça Feminina de Ski e Snowboard FR500",
+    marca: "Wedze",
+    preco: 899.99,
+    categoria: "roupa",
+    imagens: [
+      "/produtos/roupas/calca-feminina-de-ski-e-snowboard fr500-wedze/calca-feminina-de-ski-e-snowboard fr500-wedze.jpg",
+      "/produtos/roupas/calca-feminina-de-ski-e-snowboard fr500-wedze/calca-feminina-de-ski-e-snowboard fr500-wedze1.jpg",
+      "/produtos/roupas/calca-feminina-de-ski-e-snowboard fr500-wedze/calca-feminina-de-ski-e-snowboard fr500-wedze2.jpg",
+      "/produtos/roupas/calca-feminina-de-ski-e-snowboard fr500-wedze/calca-feminina-de-ski-e-snowboard fr500-wedze3.jpg",
+      "/produtos/roupas/calca-feminina-de-ski-e-snowboard fr500-wedze/calca-feminina-de-ski-e-snowboard fr500-wedze4.jpg",
+      "/produtos/roupas/calca-feminina-de-ski-e-snowboard fr500-wedze/calca-feminina-de-ski-e-snowboard fr500-wedze5.jpg",
+    ],
+    variacoes: []
+  },
   
 ];
 

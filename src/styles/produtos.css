@@ -15,7 +15,7 @@
     box-shadow: none !important;
   }
   .produto:hover {
-    background-color: #eeeeee;
+    background-color: #e3e3e3;
     cursor: pointer;
   }
   
@@ -45,7 +45,7 @@
     height: 1rem;
     margin-top: 1rem;
     margin-left: 1rem;
-    border-radius: 0%;
+    border-radius: 0px;
     border: 1px solid #000000;
     display: inline-block;
     cursor: pointer;
@@ -59,3 +59,15 @@
   .cor-bolinha.ativa {
     transform: scale(1.2);
   }
+
+
+
+  .variacoes-wrapper {
+    height: auto;
+    margin-top: 0.5rem;
+  }
+  
+  .produto-variacoes {
+    justify-content: center;
+  }
+  
