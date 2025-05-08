@@ -271,6 +271,7 @@
 
 .bloco1, .bloco2-superior, .bloco2-inferior, .bloco3-superior, .bloco3-central, .bloco3-inferior {
   position: relative; /* Necessário para posicionar os botões */
+  background-color: rgba(58, 100, 42, 0.3);
 }
 
 .produto-imagem-container {
