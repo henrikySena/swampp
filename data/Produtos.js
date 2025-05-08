@@ -378,19 +378,32 @@ export const produtosEmDestaque = [
   },
   {
     id: 19, 
-    nome: "Barraca de Camping 2 Seconds para 2 pessoas",
+    nome: "Monóculo de Trilha M100 Quechua",
     marca: "Quechua",
     preco: 129.99,
     categoria: "equipamento",
-    imagens: [
-      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua.jpg",
-      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua1.jpg",
-      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua2.jpg",
-      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua3.jpg",
-      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua4.jpg",
-      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua5.jpg",
-    ],
-    variacoes: []
+    imagens: [],
+    variacoes: [
+      {
+        cor: "Azul",
+        corHex: "#59888D",
+        imagens: [
+          "/produtos/equipamentos/monoculo/monoculo-de-trilha-m100-quechua/azul/monoculo-de-trilha-m100-quechua-azul.jpg",
+          "/produtos/equipamentos/monoculo/monoculo-de-trilha-m100-quechua/azul/monoculo-de-trilha-m100-quechua-azul1.jpg",
+          "/produtos/equipamentos/monoculo/monoculo-de-trilha-m100-quechua/azul/monoculo-de-trilha-m100-quechua-azul2.jpg",
+
+        ]
+      },
+      {
+        cor: "Rose",
+        corHex: "#DA5B6F",
+        imagens: [
+          "/produtos/equipamentos/monoculo/monoculo-de-trilha-m100-quechua/rose/monoculo-de-trilha-m100-quechua-rose.jpg",
+          "/produtos/equipamentos/monoculo/monoculo-de-trilha-m100-quechua/rose/monoculo-de-trilha-m100-quechua-rose1.jpg",
+          "/produtos/equipamentos/monoculo/monoculo-de-trilha-m100-quechua/rose/monoculo-de-trilha-m100-quechua-rose2.jpg",
+        ]
+      }
+    ]
   },
 ];
 
