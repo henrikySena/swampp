@@ -141,7 +141,6 @@ export const produtosEmDestaque = [
           "/produtos/roupas/camiseta-masculina-de-pilates-essentials-500-domyos/preta/camiseta-masculina-de-pilates-essentials-500-domyos-preta3.jpg",
         ]
       }
-      
     ]
   },
   {
@@ -315,7 +314,84 @@ export const produtosEmDestaque = [
     ],
     variacoes: []
   },
-  
+  {
+    id: 15, 
+    nome: "Barraca Camping 2 SECONDS - 2 pessoas - Fresh & Black",
+    marca: "Quechua",
+    preco: 999.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/barracas/barraca-bamping-2-seconds-2-pessoas-fresh-and-black/barraca-bamping-2-seconds-2-pessoas-fresh-and-black.jpg",
+      "/produtos/equipamentos/barracas/barraca-bamping-2-seconds-2-pessoas-fresh-and-black/barraca-bamping-2-seconds-2-pessoas-fresh-and-black1.jpg",
+      "/produtos/equipamentos/barracas/barraca-bamping-2-seconds-2-pessoas-fresh-and-black/barraca-bamping-2-seconds-2-pessoas-fresh-and-black2.jpg",
+      "/produtos/equipamentos/barracas/barraca-bamping-2-seconds-2-pessoas-fresh-and-black/barraca-bamping-2-seconds-2-pessoas-fresh-and-black3.jpg",
+      "/produtos/equipamentos/barracas/barraca-bamping-2-seconds-2-pessoas-fresh-and-black/barraca-bamping-2-seconds-2-pessoas-fresh-and-black4.jpg",
+      "/produtos/equipamentos/barracas/barraca-bamping-2-seconds-2-pessoas-fresh-and-black/barraca-bamping-2-seconds-2-pessoas-fresh-and-black5.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 16, 
+    nome: "Barraca de Camping Quechua 3 pessoas Mh100 Fresh & Black",
+    marca: "Quechua",
+    preco: 999.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/barracas/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black1.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black2.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black3.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black4.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black/barraca-de-camping-quechua-3-pessoas-mh100-fresh-and-black5.jpg"
+    ],
+    variacoes: []
+  },
+  {
+    id: 17, 
+    nome: "Colchão de Trilha Inflável Air Basic Casal",
+    marca: "Quechua",
+    preco: 284.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/colchao/colchao-de-trilha-inflavel-air-basic-casal-quechua/colchao-de-trilha-inflavel-air-basic-casal-quechua.jpg",
+      "/produtos/equipamentos/colchao/colchao-de-trilha-inflavel-air-basic-casal-quechua/colchao-de-trilha-inflavel-air-basic-casal-quechua1.jpg",
+      "/produtos/equipamentos/colchao/colchao-de-trilha-inflavel-air-basic-casal-quechua/colchao-de-trilha-inflavel-air-basic-casal-quechua2.jpg",
+      "/produtos/equipamentos/colchao/colchao-de-trilha-inflavel-air-basic-casal-quechua/colchao-de-trilha-inflavel-air-basic-casal-quechua3.jpg"
+    ],
+    variacoes: []
+  },
+  {
+    id: 18, 
+    nome: "Barraca de Camping 2 Seconds para 2 pessoas",
+    marca: "Quechua",
+    preco: 599.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua1.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua2.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua3.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua4.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua5.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 19, 
+    nome: "Barraca de Camping 2 Seconds para 2 pessoas",
+    marca: "Quechua",
+    preco: 129.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua1.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua2.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua3.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua4.jpg",
+      "/produtos/equipamentos/barracas/barraca-de-camping-2-seconds-para-2-pessoas-quechua/barraca-de-camping-2-seconds-para-2-pessoas-quechua5.jpg",
+    ],
+    variacoes: []
+  },
 ];
 
 
