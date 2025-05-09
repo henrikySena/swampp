@@ -405,6 +405,235 @@ export const produtosEmDestaque = [
       }
     ]
   },
+  {
+    id: 20, 
+    nome: "Lanterna de Trilha - BL100 - 100 Lúmens",
+    marca: "Quechua",
+    preco: 129.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua.jpg",
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua1.jpg",
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua2.jpg",
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua3.jpg",
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua4.jpg",
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua5.jpg",
+      "/produtos/equipamentos/lanternas/lanterna-de-trilha-bl100-100-lumens-quechua/lanterna-de-trilha-bl100-100-lumens-quechua6.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 21, 
+    nome: "Cadeira baixa compacta 500 para camping",
+    marca: "Quechua",
+    preco: 349.99,
+    categoria: "equipamento",
+    imagens: [],
+    variacoes: [
+      {
+        cor: "Bege",
+        corHex: "#AFACA1",
+        imagens: [
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/bege/cadeira-baixa-compacta-500-para-camping-bege.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/bege/cadeira-baixa-compacta-500-para-camping-bege1.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/bege/cadeira-baixa-compacta-500-para-camping-bege2.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/bege/cadeira-baixa-compacta-500-para-camping-bege3.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/bege/cadeira-baixa-compacta-500-para-camping-bege4.jpg",
+
+        ]
+      },
+      {
+        cor: "Verde",
+        corHex: "#445353",
+        imagens: [
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/verde/cadeira-baixa-compacta-500-para-camping-verde.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/verde/cadeira-baixa-compacta-500-para-camping-verde1.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/verde/cadeira-baixa-compacta-500-para-camping-verde2.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/verde/cadeira-baixa-compacta-500-para-camping-verde3.jpg",
+          "/produtos/equipamentos/cadeiras/cadeira-baixa-compacta-500-para-camping-quechua/verde/cadeira-baixa-compacta-500-para-camping-verde4.jpg",
+        ]
+      }
+    ]
+  },
+  {
+    id: 22, 
+    nome: "Cadeira Dobrável Nautika Pandera com Dois Porta Copos",
+    marca: "NKT",
+    preco: 169.99,
+    categoria: "equipamento",
+    imagens: [
+      "/produtos/equipamentos/cadeiras/cadeira-dobravel-pandera-com-dois-porta-copos-nautika/cadeira-dobravel-pandera-com-dois-porta-copos-nautika.jpg",
+      "/produtos/equipamentos/cadeiras/cadeira-dobravel-pandera-com-dois-porta-copos-nautika/cadeira-dobravel-pandera-com-dois-porta-copos-nautika1.jpg",
+      "/produtos/equipamentos/cadeiras/cadeira-dobravel-pandera-com-dois-porta-copos-nautika/cadeira-dobravel-pandera-com-dois-porta-copos-nautika2.jpg",
+      "/produtos/equipamentos/cadeiras/cadeira-dobravel-pandera-com-dois-porta-copos-nautika/cadeira-dobravel-pandera-com-dois-porta-copos-nautika3.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 23, 
+    nome: "Coleira para Cão Outdoor 500",
+    marca: "Solognac",
+    preco: 89.99,
+    categoria: "equipamento",
+    imagens: [],
+    variacoes: [
+      {
+        cor: "Vermelho",
+        corHex: "#983728",
+        imagens: [
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/vermelho/coleira-para-cão-outdoor-500-solognac-vermelho.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/vermelho/coleira-para-cão-outdoor-500-solognac-vermelho1.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/vermelho/coleira-para-cão-outdoor-500-solognac-vermelho2.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/vermelho/coleira-para-cão-outdoor-500-solognac-vermelho3.jpg",
+
+        ]
+      },
+      {
+        cor: "Amarelo",
+        corHex: "#D4AA48",
+        imagens: [
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/amarelo/coleira-para-cão-outdoor-500-solognac-amarelo.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/amarelo/coleira-para-cão-outdoor-500-solognac-amarelo1.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/amarelo/coleira-para-cão-outdoor-500-solognac-amarelo2.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/amarelo/coleira-para-cão-outdoor-500-solognac-amarelo3.jpg",
+        ]
+      },
+      {
+        cor: "Azul",
+        corHex: "#1A92AD",
+        imagens: [
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/azul/coleira-para-cão-outdoor-500-solognac-azul.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/azul/coleira-para-cão-outdoor-500-solognac-azul1.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/azul/coleira-para-cão-outdoor-500-solognac-azul2.jpg",
+          "/produtos/equipamentos/outros/coleira-para-cão-outdoor-500-solognac/azul/coleira-para-cão-outdoor-500-solognac-azul3.jpg",
+        ]
+      }
+    ]
+  },
+  {
+    id: 24, 
+    nome: "Fogareiro de Camping Frontier Flex",
+    marca: "Nautika",
+    preco: 199.99,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/apoio/fogareiro-de-camping-frontier-flex-nautika/fogareiro-de-camping-frontier-flex-nautika.png",
+      "/produtos/acessorios/apoio/fogareiro-de-camping-frontier-flex-nautika/fogareiro-de-camping-frontier-flex-nautika1.png",
+      "/produtos/acessorios/apoio/fogareiro-de-camping-frontier-flex-nautika/fogareiro-de-camping-frontier-flex-nautika2.png",
+      "/produtos/acessorios/apoio/fogareiro-de-camping-frontier-flex-nautika/fogareiro-de-camping-frontier-flex-nautika3.png",
+      "/produtos/acessorios/apoio/fogareiro-de-camping-frontier-flex-nautika/fogareiro-de-camping-frontier-flex-nautika4.png",
+      "/produtos/acessorios/apoio/fogareiro-de-camping-frontier-flex-nautika/fogareiro-de-camping-frontier-flex-nautika5.png"
+    ],
+    variacoes: []
+  },
+  {
+    id: 25, 
+    nome: "Mesa dobrável de 90cm Frade",
+    marca: "Nautika",
+    preco: 448.90,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/apoio/mesa-dobravel-de-90cm-rade-nautika/mesa-dobravel-de-90cm-rade-nautika.jpg",
+      "/produtos/acessorios/apoio/mesa-dobravel-de-90cm-rade-nautika/mesa-dobravel-de-90cm-rade-nautika1.jpg",
+      "/produtos/acessorios/apoio/mesa-dobravel-de-90cm-rade-nautika/mesa-dobravel-de-90cm-rade-nautika2.jpg",
+      "/produtos/acessorios/apoio/mesa-dobravel-de-90cm-rade-nautika/mesa-dobravel-de-90cm-rade-nautika3.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 26, 
+    nome: "Óculos de Natação Espelhado B-Fast",
+    marca: "Nabaiji",
+    preco: 134.99,
+    categoria: "acessorio",
+    imagens: [],
+    variacoes: [
+      {
+        cor: "Azul",
+        corHex: "#2C387E",
+        imagens: [
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/azul/oculos-de-natacao-espelhado-b-fast-nabaiji-azul.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/azul/oculos-de-natacao-espelhado-b-fast-nabaiji-azul1.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/azul/oculos-de-natacao-espelhado-b-fast-nabaiji-azul2.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/azul/oculos-de-natacao-espelhado-b-fast-nabaiji-azul3.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/azul/oculos-de-natacao-espelhado-b-fast-nabaiji-azul4.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/azul/oculos-de-natacao-espelhado-b-fast-nabaiji-azul5.jpg",
+        ]
+      },
+      {
+        cor: "Preto",
+        corHex: "#1E1E1E",
+        imagens: [
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/preto/oculos-de-natacao-espelhado-b-fast-nabaiji-preto.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/preto/oculos-de-natacao-espelhado-b-fast-nabaiji-preto1.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/preto/oculos-de-natacao-espelhado-b-fast-nabaiji-preto2.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/preto/oculos-de-natacao-espelhado-b-fast-nabaiji-preto3.jpg",
+          "/produtos/acessorios/oculos/oculos-de-natacao-espelhado-b-fast-nabaiji/preto/oculos-de-natacao-espelhado-b-fast-nabaiji-preto4.jpg",
+        ]
+      },
+    ]
+  },
+  {
+    id: 27, 
+    nome: "Gazebo De Camping Base Arpenaz Para 6 Pessoas",
+    marca: "Quechua",
+    preco: 1499.99,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/apoio/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua1.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua2.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua3.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua/gazebo-de-camping-base-arpenaz-para-6-pessoas-quechua4.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 28, 
+    nome: "Gazebo de Camping Arpenaz Base Fresh",
+    marca: "Quechua",
+    preco: 2089.99,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/apoio/gazebo-de-camping-arpenaz-base-fresh-quechua/gazebo-de-camping-arpenaz-base-fresh-quechua.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-arpenaz-base-fresh-quechua/gazebo-de-camping-arpenaz-base-fresh-quechua1.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-arpenaz-base-fresh-quechua/gazebo-de-camping-arpenaz-base-fresh-quechua2.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-arpenaz-base-fresh-quechua/gazebo-de-camping-arpenaz-base-fresh-quechua3.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-arpenaz-base-fresh-quechua/gazebo-de-camping-arpenaz-base-fresh-quechua4.jpg",
+      "/produtos/acessorios/apoio/gazebo-de-camping-arpenaz-base-fresh-quechua/gazebo-de-camping-arpenaz-base-fresh-quechua5.jpg"
+    ],
+    variacoes: []
+  },
+  {
+    id: 29, 
+    nome: "Gazebo Desmontável NTK Camp 3m x 3m Branco",
+    marca: "Nautika",
+    preco: 445.90,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/apoio/gazebo-desmontavel-ntk-camp-3m-x-3m-branco/gazebo-desmontavel-ntk-camp-3m-x-3m-branco.jpg",
+      "/produtos/acessorios/apoio/gazebo-desmontavel-ntk-camp-3m-x-3m-branco/gazebo-desmontavel-ntk-camp-3m-x-3m-branco1.jpg",
+      "/produtos/acessorios/apoio/gazebo-desmontavel-ntk-camp-3m-x-3m-branco/gazebo-desmontavel-ntk-camp-3m-x-3m-branco2.jpg",
+      "/produtos/acessorios/apoio/gazebo-desmontavel-ntk-camp-3m-x-3m-branco/gazebo-desmontavel-ntk-camp-3m-x-3m-branco3.jpg",
+      "/produtos/acessorios/apoio/gazebo-desmontavel-ntk-camp-3m-x-3m-branco/gazebo-desmontavel-ntk-camp-3m-x-3m-branco4.jpg",
+    ],
+    variacoes: []
+  },
+  {
+    id: 30, 
+    nome: "Kit de Panelas e Fogareiro 360 Degrees Furno Stove e Pot Set",
+    marca: "Sea To Summit",
+    preco: 349.90,
+    categoria: "acessorio",
+    imagens: [
+      "/produtos/acessorios/apoio/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set.jpg",
+      "/produtos/acessorios/apoio/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set1.jpg",
+      "/produtos/acessorios/apoio/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set2.jpg",
+      "/produtos/acessorios/apoio/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set3.jpg",
+      "/produtos/acessorios/apoio/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set/kit-de-panelas-e-fogareiro-360-degrees-furno-stove-e-pot-set4.jpg",
+    ],
+    variacoes: []
+  },
 ];
 
 
