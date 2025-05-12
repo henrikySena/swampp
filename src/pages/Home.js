@@ -1,6 +1,7 @@
 import { navbarLinks, criarNavbar } from '../components/navbar/navbar.js';
 import { produtosEmDestaque } from '../../data/Produtos.js';
 import { adicionarAoCarrinho } from './Carrinho.js';
+import { renderizarProdutos } from '../components/produto/renderProduto.js'; // Nova importação
 import '../styles/produtos.css';
 import '../styles/home.css';
 import { carousel } from '../components/carousel/carousel.js';
@@ -40,66 +41,69 @@ export function renderHome() {
       <div class="produtos" id="lista-produtosEmDestaque"></div>
     </section>
 
-    <section class="home-banner"></section>
+    <section id="sobre">
+      <section class="home-banner"></section>
 
-    <section class="text-home-container">
-      <h2 class="titulo-home-container">Você sabia que sua compra é consciente?</h2>
-      <p class="paragrafo-home-container">Na Swampp, 35% do valor das vendas é destinado a ações de preservação ambiental. Mais do que incentivar a aventura e a conexão com a natureza, temos a missão de contribuir para a conservação do meio ambiente e do bem-estar de todos os seres.</p>
-    </section>
+      <section class="text-home-container">
+        <h2 class="titulo-home-container">Você sabia que sua compra é consciente?</h2>
+        <p class="paragrafo-home-container">Na Swampp, 35% do valor das vendas é destinado a ações de preservação ambiental. Mais do que incentivar a aventura e a conexão com a natureza, temos a missão de contribuir para a conservação do meio ambiente e do bem-estar de todos os seres.</p>
+      </section>
 
-    <section class="home-grid">
-      <div class="inteira">
-        <div class="secao-superior">
-          <div class="coluna1">
-            <div class="bloco1">
-              <div class="grid-tag">roupas</div>
-              <a href="/pagina1.html" class="grid-btn" id="btn1">
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+    
+      <section class="home-grid">
+        <div class="inteira">
+          <div class="secao-superior">
+            <div class="coluna1">
+              <div class="bloco1">
+                <div class="grid-tag">roupas</div>
+                <a href="/pagina1.html" class="grid-btn" id="btn1">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="coluna2">
+              <div class="bloco2-superior">
+                <div class="grid-tag">equipamentos</div>
+                <a href="#" class="grid-btn" id="btn2">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="bloco2-inferior">
+                <div class="grid-tag">acessórios</div>
+                <a href="#" class="grid-btn" id="btn3">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="coluna3">
+              <div class="bloco3-superior">
+                <a href="#" class="grid-btn" id="btn4">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="bloco3-central">
+                <a href="#" class="grid-btn" id="btn5">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="bloco3-inferior">
+                <a href="#" class="grid-btn" id="btn6">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="coluna2">
-            <div class="bloco2-superior">
-              <div class="grid-tag">equipamentos</div>
-              <a href="#" class="grid-btn" id="btn2">
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+          <div class="secao-inferior">
+            <div class="varias-tags">
+              <div class="grid-tag">as novidades apareceram com essa tag</div>
             </div>
-            <div class="bloco2-inferior">
-              <div class="grid-tag">acessórios</div>
-              <a href="#" class="grid-btn" id="btn3">
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="coluna3">
-            <div class="bloco3-superior">
-              <a href="#" class="grid-btn" id="btn4">
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            <div class="bloco3-central">
-              <a href="#" class="grid-btn" id="btn5">
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-            <div class="bloco3-inferior">
-              <a href="#" class="grid-btn" id="btn6">
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
+            <a href="#" class="grid-btn2" id="btn6">
+              Conhecer mais sobre
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
-        <div class="secao-inferior">
-          <div class="varias-tags">
-            <div class="grid-tag">as novidades apareceram com essa tag</div>
-          </div>
-          <a href="#" class="grid-btn2" id="btn6">
-            Conhecer mais sobre
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
+      </section>
     </section>
   `;
 
@@ -109,161 +113,8 @@ export function renderHome() {
   // Filtragem de produtos em destaque
   const listaProdutosEmDestaque = document.getElementById('lista-produtosEmDestaque');
 
-  function renderizarProdutosEmDestaque(categoriaSelecionada = "todos") {
-    listaProdutosEmDestaque.innerHTML = "";
-
-    // Filtragem dos itens
-    const produtosFiltrados = categoriaSelecionada === "todos"
-      ? produtosEmDestaque
-      : produtosEmDestaque.filter(prod => 
-          Array.isArray(prod.categoria) 
-            ? prod.categoria.includes(categoriaSelecionada) 
-            : prod.categoria === categoriaSelecionada
-        );
-
-    // Renderização dos produtos filtrados
-    produtosFiltrados.forEach((produto, index) => {
-      const div = document.createElement('div');
-      div.classList.add('produto');
-
-      let imagemAtual = 0;
-      let variacaoAtual = produto.variacoes && produto.variacoes.length > 0 ? produto.variacoes[0] : null;
-
-      // Contêiner para imagem e setas
-      const imagemContainer = document.createElement('div');
-      imagemContainer.classList.add('produto-imagem-container');
-
-      // Imagem principal
-      const imagemPrincipal = document.createElement('img');
-      imagemPrincipal.classList.add('produto-img');
-      imagemPrincipal.alt = produto.nome;
-
-      // Define a imagem inicial
-      const imagensDisponiveis = variacaoAtual ? variacaoAtual.imagens : produto.imagens;
-      imagemPrincipal.src = imagensDisponiveis[0];
-
-      // Setas de navegação
-      const setaEsq = document.createElement('button');
-      setaEsq.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-      setaEsq.classList.add('product-arrow', 'arrow-left');
-
-      const setaDir = document.createElement('button');
-      setaDir.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-      setaDir.classList.add('product-arrow', 'arrow-right');
-
-      // Lógica das setas
-      setaEsq.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que o clique nas setas acione o evento da div
-        const imagens = variacaoAtual ? variacaoAtual.imagens : produto.imagens;
-        imagemAtual = (imagemAtual - 1 + imagens.length) % imagens.length;
-        imagemPrincipal.src = imagens[imagemAtual];
-      });
-
-      setaDir.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que o clique nas setas acione o evento da div
-        const imagens = variacaoAtual ? variacaoAtual.imagens : produto.imagens;
-        imagemAtual = (imagemAtual + 1) % imagens.length;
-        imagemPrincipal.src = imagens[imagemAtual];
-      });
-
-      // Monta o contêiner de imagem
-      imagemContainer.appendChild(imagemPrincipal);
-      imagemContainer.appendChild(setaEsq);
-      imagemContainer.appendChild(setaDir);
-      div.appendChild(imagemContainer);
-
-      // Variações de cor (se existirem)
-      if (produto.variacoes && produto.variacoes.length > 0) {
-        // Cria o wrapper que SEMPRE estará no DOM
-        const variacoesWrapper = document.createElement('div');
-        variacoesWrapper.classList.add('variacoes-wrapper');
-      
-        const variacoesDiv = document.createElement('div');
-        variacoesDiv.classList.add('produto-variacoes');
-        variacoesDiv.style.display = 'none'; // começa escondido
-      
-        produto.variacoes.forEach((variacao, idx) => {
-          const corBolinha = document.createElement('span');
-          corBolinha.classList.add('cor-bolinha');
-          if (idx === 0) corBolinha.classList.add('ativa');
-          corBolinha.style.backgroundColor = variacao.corHex;
-          corBolinha.title = variacao.cor;
-      
-          corBolinha.addEventListener('click', (e) => {
-            e.stopPropagation();
-            variacaoAtual = variacao;
-            imagemAtual = 0;
-            imagemPrincipal.src = variacao.imagens[imagemAtual];
-      
-            const todasBolinhas = variacoesDiv.querySelectorAll('.cor-bolinha');
-            todasBolinhas.forEach(b => b.classList.remove('ativa'));
-            corBolinha.classList.add('ativa');
-          });
-      
-          variacoesDiv.appendChild(corBolinha);
-        });
-      
-        variacoesWrapper.appendChild(variacoesDiv);
-        div.appendChild(variacoesWrapper); // Adiciona o wrapper já no DOM
-      
-        div.addEventListener('mouseenter', () => {
-          variacoesDiv.style.display = 'flex';
-        });
-      
-        div.addEventListener('mouseleave', () => {
-          variacoesDiv.style.display = 'none';
-        });
-      }
-      
-
-      // Nome, marca, preço
-      const marca = document.createElement('p');
-      marca.classList.add('produto-marca');
-      marca.textContent = produto.marca;
-
-      const nome = document.createElement('p');
-      nome.classList.add('produto-nome');
-      nome.textContent = produto.nome;
-
-      const preco = document.createElement('p');
-      preco.classList.add('produto-preco');
-      preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
-
-      // Montagem final
-      div.appendChild(marca);
-      div.appendChild(nome);
-      div.appendChild(preco);
-
-      // Botão "Adicionar ao Carrinho"
-      const botaoCarrinho = document.createElement('button');
-      botaoCarrinho.textContent = 'Adicionar ao Carrinho';
-      botaoCarrinho.classList.add('botao-carrinho');
-
-      botaoCarrinho.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que o clique no botão acione o evento da div
-        const produtoParaCarrinho = {
-          nome: produto.nome,
-          preco: produto.preco,
-          imagem: variacaoAtual ? variacaoAtual.imagens[0] : produto.imagens[0],
-        };
-        adicionarAoCarrinho(produtoParaCarrinho);
-      });
-
-      //div.appendChild(botaoCarrinho);
-
-      // Link para a página de visualização do produto com o índice
-      div.addEventListener('click', (e) => {
-        // Evita que o clique em elementos interativos acione a navegação
-        if (e.target.closest('.product-arrow, .cor-bolinha, .botao-carrinho')) return;
-        window.location.hash = `#produto?id=${produto.id}`;
-      });
-
-      listaProdutosEmDestaque.appendChild(div);
-    });
-  }
-
   // Renderiza os produtos inicialmente
-  renderizarProdutosEmDestaque();
+  renderizarProdutos('todos', listaProdutosEmDestaque, produtosEmDestaque, adicionarAoCarrinho);
 
   // Configura os filtros
   const botoesFiltro = document.querySelectorAll('.filtro-btn');
@@ -272,7 +123,7 @@ export function renderHome() {
       botoesFiltro.forEach(btn => btn.classList.remove('ativo'));
       botao.classList.add('ativo');
       const categoria = botao.getAttribute('data-categoria');
-      renderizarProdutosEmDestaque(categoria);
+      renderizarProdutos(categoria, listaProdutosEmDestaque, produtosEmDestaque, adicionarAoCarrinho);
     });
   });
 }

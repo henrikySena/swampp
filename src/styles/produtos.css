@@ -6,8 +6,10 @@
   }
   
   .produto {
-    width: 18rem !important;
-    height: 29rem !important;
+    position: relative;
+    display: inline-block;
+    width: 15rem !important;
+    height: 25rem !important;
     padding: 0.5rem !important;
     border-radius: 0 !important;
     background-color: none !important;
@@ -17,6 +19,7 @@
   .produto:hover {
     background-color: #e3e3e3;
     cursor: pointer;
+    transition: 0.3s;
   }
   
   .produto img {
@@ -25,12 +28,12 @@
   .produto-marca {
     color: #888;
     text-align: left;
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
   .produto-nome {
     color: #000;
     text-align: left;
-    margin-top: -0.5rem;
+    margin-top: -0.1rem;
     font-weight: 300;
   }
   .produto-preco {
@@ -71,3 +74,10 @@
     justify-content: center;
   }
   
+
+
+
+
+
+
+
