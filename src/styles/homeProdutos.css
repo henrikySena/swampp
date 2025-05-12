@@ -1,0 +1,157 @@
+.container-produtos {
+  margin-top: 8rem;
+  display: flex;
+  margin-left: 2rem;
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 20%;
+  height: calc(100vh - 5rem);
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.menu-lateral h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.produtos-filtros-categorias {
+  display: flex;
+  flex-direction: column;
+}
+
+.produtos-filtro-btn {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.produtos-filtro-btn.ativo {
+  font-weight: normal;
+}
+
+.produtos-destaques {
+  width: 80%;
+  margin-left: 20%;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.filtro-bloco {
+    margin-bottom: 20px;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #0000001e;
+}
+
+.filtro-bloco h3 {
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: lighter;
+    display: flex;
+}
+
+.produtos-filtro-preco {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    gap: 5px; /* Espaçamento entre o controle deslizante e o texto */
+    align-items: flex-start; /* Alinha o texto à esquerda */
+}
+
+.produtos-filtro-preco input {
+    width: 100%; /* Faz o controle deslizante ocupar toda a largura */
+}
+
+.produtos-filtro-preco span {
+    font-size: 15px;
+    margin-top: 0.2rem;
+    font-weight: normal;
+}
+
+/* Estilos do controle deslizante no Chrome */
+.produtos-filtro-preco input[type="range"] {
+    -webkit-appearance: none;  /* Remove o estilo padrão do Chrome */
+    appearance: none;
+    width: 100%;  /* Faz o controle deslizante ocupar toda a largura */
+    height: 0.1rem; /* Ajusta a altura da barra */
+    background: #000; /* Cor da barra */
+    border-radius: 5px;  /* Arredonda os cantos da barra */
+}
+
+/* Estilo do polegar do controle deslizante */
+.produtos-filtro-preco input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Remove o estilo padrão do Chrome */
+    appearance: none;
+    width: 0.8rem;  /* Largura do polegar */
+    height: 0.8rem;  /* Altura do polegar */
+    background: #000; /* Cor do polegar */
+    border-radius: 50%;  /* Faz o polegar ser redondo */
+}
+
+
+
+
+
+.select-estilizado {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+    position: relative;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"%3E%3Cpath fill="%23999" d="M7 7l5 5 5-5H7z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px 12px;
+}
+
+.select-estilizado:hover {
+    border-color: #000000;
+}
+
+.select-estilizado:focus {
+    border-color: none;
+    box-shadow: none;
+}
+
+.select-estilizado option {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.btn-limpar-filtros {
+    display: block;
+    margin: 0 auto;
+    padding: 0.8rem 4rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    transition: all 0.2s ease; /* Transição suave */
+}
+
+.btn-limpar-filtros:active {
+    transform: scale(0.95); /* Reduz em 5% o tamanho do botão */
+}

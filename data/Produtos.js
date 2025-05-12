@@ -725,7 +725,7 @@ export const produtos = [
   {
     id: 22, 
     nome: "Cadeira Dobrável Nautika Pandera com Dois Porta Copos",
-    marca: "NKT",
+    marca: "Nautika",
     preco: 169.99,
     categoria: "equipamento",
     imagens: [
