@@ -25,10 +25,18 @@ export function renderHome() {
           <img src="/home/carousel/img-carousel5.png" class="slide" alt="Slide 6">
           <img src="/home/carousel/img-carousel6.png" class="slide" alt="Slide 7">
         </div>
+
+        <!-- Mensagem e Botão sobrepondo o Carrossel -->
+        <div class="hero-overlay">
+          <h2>Confira nossos produtos incríveis!</h2>
+          <a href="#produtos" class="cta-button">Ver Produtos</a>
+        </div>
+
         <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
         <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
       </div>
     </section>
+
 
     <section class="destaques">
       <h2 class="titulo-destaques">Destaques da semana!</h2>

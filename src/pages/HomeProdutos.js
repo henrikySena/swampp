@@ -5,25 +5,29 @@ import { adicionarAoCarrinho } from "./Carrinho.js";
 export function renderProdutos() {
     const main = document.querySelector('main');
     main.innerHTML = `
-        <section class="destaques">
-          <h2 class="titulo-destaques">Produtos</h2>
-          <div class="filtros-categorias">
-              <a class="filtro-btn ativo" data-categoria="todos">Todos</a>
-              <a class="filtro-btn" data-categoria="roupa">Roupas</a>
-              <a class="filtro-btn" data-categoria="equipamento">Equipamentos</a>
-              <a class="filtro-btn" data-categoria="acessorio">Acessórios</a>
-          </div>
-          <div class="produtos" id="lista-produtosEmDestaque"></div>
+        <section class="container-produtos">
+            <aside class="menu-lateral">
+                <h3>Filtrar por Categoria</h3>
+                <nav class="produtos-filtros-categorias">
+                    <a class="produtos-filtro-btn ativo" data-categoria="todos">Todos</a>
+                    <a class="produtos-filtro-btn" data-categoria="roupa">Roupas</a>
+                    <a class="produtos-filtro-btn" data-categoria="equipamento">Equipamentos</a>
+                    <a class="produtos-filtro-btn" data-categoria="acessorio">Acessórios</a>
+                </nav>
+            </aside>
+
+            <section class="produtos-destaques">
+                <h2 class="titulo-destaques">Produtos</h2>
+                <div class="produtos" id="lista-produtosEmDestaque"></div>
+            </section>
         </section>
     `;
 
     const listaProdutosEmDestaque = document.getElementById("lista-produtosEmDestaque");
 
-    // Renderiza os produtos usando os dados de Produtos.js
     renderizarProdutos("todos", listaProdutosEmDestaque, produtos, adicionarAoCarrinho);
 
-    // Configura os filtros para atualizar a renderização de acordo com a categoria selecionada
-    const botoesFiltro = document.querySelectorAll('.filtro-btn');
+    const botoesFiltro = document.querySelectorAll('.produtos-filtro-btn');
     botoesFiltro.forEach(botao => {
         botao.addEventListener('click', () => {
             botoesFiltro.forEach(btn => btn.classList.remove('ativo'));

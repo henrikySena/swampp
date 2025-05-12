@@ -321,3 +321,38 @@
 
 
 
+
+
+
+.hero {
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  padding: 20px 40px;
+  border-radius: 8px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e65c00;
+}
