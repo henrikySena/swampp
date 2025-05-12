@@ -58,6 +58,11 @@ export function renderProdutos() {
                 <div class="produtos" id="lista-produtosEmDestaque"></div>
             </section>
         </section>
+
+        <!-- Botão para subir ao topo -->
+        <button id="scrollToTopBtn" class="scroll-to-top-btn">
+            <i class="fas fa-chevron-up"></i>
+        </button>
     `;
 
     const listaProdutosEmDestaque = document.getElementById("lista-produtosEmDestaque");
@@ -67,6 +72,7 @@ export function renderProdutos() {
     const filtroOrdenacao = document.getElementById("filtro-ordenacao");
     const botaoLimpar = document.getElementById("limparFiltros");
     const contadorProdutos = document.getElementById("contador-produtos");
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     let categoriaAtiva = "todos";
     let marcaAtiva = "todas";
 
@@ -132,4 +138,20 @@ export function renderProdutos() {
     function atualizarContador(quantidade) {
         contadorProdutos.textContent = `${quantidade} produto(s) encontrado(s)`;
     }
+
+    // Lógica do botão para subir ao topo
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
 }
