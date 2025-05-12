@@ -28,8 +28,15 @@ export function renderHome() {
 
         <!-- Mensagem e Botão sobrepondo o Carrossel -->
         <div class="hero-overlay">
-          <h2>Confira nossos produtos incríveis!</h2>
-          <a href="#produtos" class="cta-button">Ver Produtos</a>
+          <h1>Seja muito bem-vindo(a) à Swampp!</h1>
+          <h4>Aqui você tem acesso aos melhores produtos do mercado</h4>
+          <a class="carrosel-tag">roupas</a>
+          <a class="carrosel-tag">equipamentos</a>
+          <a class="carrosel-tag">acessórios</a>
+          <div>
+            <a href="#produtos" class="cta-button">Descubra mais!</a>
+          </div>
+          
         </div>
 
         <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
