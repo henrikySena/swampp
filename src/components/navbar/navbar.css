@@ -125,3 +125,22 @@
   width: 20px;
   height: 20px;
 }
+
+.carrinho-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 18px;  /* Tamanho maior para melhor visibilidade do número */
+  height: 18px; /* Tamanho maior para melhor visibilidade do número */
+  background-color: #ff0000; /* Laranja Brasa */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 17px;  /* Isso ajuda a centralizar verticalmente */
+  padding: 0 3px; /* Espaçamento extra, caso o número tenha 2 dígitos */
+}

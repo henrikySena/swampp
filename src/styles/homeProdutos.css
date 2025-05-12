@@ -169,9 +169,17 @@
   color: white;
   border: none;
   padding: 10px 11px;
-  border-radius: 500px;
+  border-radius: 50%;  /* Garante que o botão seja circular */
   cursor: pointer;
   font-size: 18px;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#scrollToTopBtn i {  /* Seleciona o ícone dentro do botão */
+  transform: translateY(3px);  /* Move o ícone para baixo */
+}
+
 
