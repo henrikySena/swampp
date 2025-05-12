@@ -95,6 +95,11 @@ export function criarNavbar() {
     const a = document.createElement('a');
     a.href = link.url ?? "#";
     a.innerHTML = `${link.svg ?? ''}<span>${link.texto}</span>`;
+
+    if (link.url === '#carrinho') {
+      inicializarBadge(a);
+    }
+
     navRight.appendChild(a);
   });
 
@@ -109,35 +114,44 @@ export function criarNavbar() {
   const updateNavbarStyle = () => {
     const hash = window.location.hash;
     const isHomePage = (hash === '' || hash === '#home');
-
-    // Remove listeners de scroll anteriores
     window.onscroll = null;
 
     if (isHomePage) {
       nav.classList.remove('opacity-full');
-      // Aplica efeito de blur com scroll
       window.onscroll = () => {
-        if (window.scrollY > 10) {
-          nav.classList.add('blur');
-        } else {
-          nav.classList.remove('blur');
-        }
+        nav.classList.toggle('blur', window.scrollY > 10);
       };
-      // Aplica o estado inicial
-      if (window.scrollY > 10) {
-        nav.classList.add('blur');
-      } else {
-        nav.classList.remove('blur');
-      }
+      nav.classList.toggle('blur', window.scrollY > 10);
     } else {
       nav.classList.add('opacity-full');
       nav.classList.remove('blur');
     }
   };
 
-  // Inicializa o estilo
   updateNavbarStyle();
-
-  // Listener para mudanças de hash (navegação SPA)
   window.addEventListener('hashchange', updateNavbarStyle);
+}
+
+// Função para inicializar o badge do carrinho
+function inicializarBadge(anchor) {
+  const badge = document.createElement('span');
+  badge.classList.add('carrinho-badge');
+  badge.textContent = '0';
+  badge.style.display = 'none';
+  anchor.appendChild(badge);
+
+  // Atualiza o contador a cada segundo
+  setInterval(atualizarContadorCarrinho, 1000);
+}
+
+// Atualiza o contador do carrinho
+export function atualizarContadorCarrinho() {
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const carrinhoLink = document.querySelector('a[href="#carrinho"]');
+  const badge = carrinhoLink.querySelector('.carrinho-badge');
+
+  if (badge) {
+    badge.textContent = carrinho.length;
+    badge.style.display = carrinho.length > 0 ? 'block' : 'none';
+  }
 }
