@@ -333,14 +333,14 @@
   /* backdrop-filter: blur(10px); */
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 32%;
   transform: translate(-50%, -50%);
   z-index: 10;
   color: white;
   padding: 20px 40px;
 }
 .hero-overlay h1 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   margin-bottom: -0.99rem;
 }
 .hero-overlay h4 {
@@ -365,15 +365,22 @@
 .cta-button {
   display: inline-block;
   padding: 13px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   background-color: #000000;
   color: white;
   text-decoration: none;
-  border-radius: 500px;
-  transition: background-color 0.3s ease;
+  border-radius: 80px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  transform: scale(1);
 }
 
 .cta-button:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  transform: scale(1.05); /* Aumenta ligeiramente no hover */
 }
+
+.cta-button:active {
+  transform: scale(0.95); /* Diminui quando clicado */
+}
+

@@ -114,7 +114,7 @@ export function renderizarProdutos(categoriaSelecionada = "todos", listaProdutos
 
       const preco = document.createElement('p');
       preco.classList.add('produto-preco');
-      preco.textContent = `R$ ${produto.preco.toFixed(2)}`;
+      preco.textContent = produto.preco.toLocaleString('pt-BR', {style: 'currency',currency: 'BRL'});
 
       // Montagem final
       div.appendChild(marca);

@@ -6,12 +6,10 @@ export function renderProduto() {
   const main = document.querySelector('main');
   main.innerHTML = '';
 
-  // Obtém o ID do produto da hash
   const hash = window.location.hash;
   const params = new URLSearchParams(hash.split('?')[1]);
   const produtoId = parseInt(params.get('id'));
 
-  // Busca o produto pelo ID em ambos os arrays
   const produto = [...produtosEmDestaque, ...produtos].find(p => p.id === produtoId);
 
   if (!produto) {
@@ -19,23 +17,19 @@ export function renderProduto() {
     return;
   }
 
-  // Define a variação inicial e as imagens
   let variacaoAtual = produto.variacoes?.[0] || null;
   let imagens = produto.imagens || [];
   if (variacaoAtual) {
     imagens = variacaoAtual.imagens || (variacaoAtual.imagem ? [variacaoAtual.imagem] : []);
   }
 
-  // Criação do container principal para o produto
-  const container = document.createElement('div');
-  container.classList.add('produto-container');  // Classe para o contêiner flexível
+  const containerYU = document.createElement('div');
+  containerYU.classList.add('produto-container');
 
-  // Container das imagens (vai ocupar 60% da tela)
   const imagensDiv = document.createElement('div');
   imagensDiv.classList.add('imagens-lado-a-lado');
-  imagensDiv.style.flex = "60%";  // Ocupa 60% da largura da tela
+  imagensDiv.style.flex = "70%";
 
-  // Função para renderizar as imagens
   function renderizarImagens(imagensArray) {
     imagensDiv.innerHTML = '';
     if (!imagensArray || imagensArray.length === 0) {
@@ -44,64 +38,89 @@ export function renderProduto() {
       imagensDiv.appendChild(placeholder);
       return;
     }
-    imagensArray.forEach(src => {
+    imagensArray.forEach((src, index) => {
       const img = document.createElement('img');
       img.src = src;
       img.alt = `${produto.nome} - Imagem`;
       img.classList.add('produto-imagem');
+      if (index === 0) img.classList.add('imagem-principal');
       imagensDiv.appendChild(img);
     });
   }
 
-  // Renderiza as imagens iniciais
   renderizarImagens(imagens);
 
-  // Container das informações (vai ocupar 40% da tela)
+  const detalhesProdutoDiv = document.createElement('div');
+  detalhesProdutoDiv.classList.add('detalhes-produto');
+  detalhesProdutoDiv.style.flex = "30%";
+
   const informacoesDiv = document.createElement('div');
   informacoesDiv.classList.add('informacoes-produto');
-  informacoesDiv.style.flex = "40%";  // Ocupa 40% da largura da tela
 
-  // Marca
   const marca = document.createElement('p');
   marca.textContent = produto.marca || 'Marca não informada';
-  marca.classList.add('produto-marca');
+  marca.classList.add('produto-marca-unica');
 
-  // Nome
   const nome = document.createElement('h2');
   nome.textContent = produto.nome || 'Produto sem nome';
   nome.classList.add('produto-nome');
 
-  // Preço
   const preco = document.createElement('p');
-  preco.textContent = `R$ ${produto.preco ? produto.preco.toFixed(2) : '0.00'}`;
-  preco.classList.add('produto-preco');
+  preco.textContent = produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  preco.classList.add('produto-preco', 'preco-customizado');
 
-  // Variações
+  const vendedorInfo = document.createElement('p');
+  vendedorInfo.classList.add('vendedor-info');
+  vendedorInfo.innerHTML = `
+    <span class="fa fa-shield-alt vendedor-icone"></span>
+    <p>Vendido e entregue por <strong> Swampp</strong></p>
+  `;
+
+  const avaliacao = document.createElement('div');
+  avaliacao.classList.add('produto-avaliacao');
+  avaliacao.innerHTML = `
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-half-stroke checked"></span>
+    <span class="avaliacao-nota">(4,8/5)</span>
+  `;
+
+  const corSelecionadaTexto = document.createElement('p');
+  corSelecionadaTexto.classList.add('cor-selecionada');
+  corSelecionadaTexto.textContent = `Cor: ${variacaoAtual?.cor || 'Única'}`;
+
+  const coresDiv = document.createElement('div');
+  coresDiv.classList.add('selecao-cores');
+
   const variacoesDiv = document.createElement('div');
-  variacoesDiv.classList.add('produto-variacoes');
+  variacoesDiv.classList.add('produto-variacoes-imagens');
 
   if (produto.variacoes?.length > 0) {
     produto.variacoes.forEach((variacao, index) => {
-      const corBolinha = document.createElement('span');
-      corBolinha.classList.add('cor-bolinha');
-      if (index === 0) corBolinha.classList.add('ativa');
-      corBolinha.style.backgroundColor = variacao.corHex || '#000';
-      corBolinha.title = variacao.cor || 'Cor sem nome';
-      corBolinha.setAttribute('aria-label', `Selecionar cor ${variacao.cor || 'desconhecida'}`);
+      const imagemSelecao = document.createElement('img');
+      const primeiraImagem = variacao.imagens?.[0] || variacao.imagem || '';
+      imagemSelecao.src = primeiraImagem || 'placeholder.jpg';
+      imagemSelecao.alt = `Variacao ${variacao.cor || 'desconhecida'}`;
+      imagemSelecao.classList.add('variacao-imagem-selecao');
+      if (index === 0) imagemSelecao.classList.add('variacao-ativa');
+      imagemSelecao.title = variacao.cor || 'Cor sem nome';
+      imagemSelecao.setAttribute('aria-label', `Selecionar variação ${variacao.cor || 'desconhecida'}`);
 
-      corBolinha.addEventListener('click', () => {
+      imagemSelecao.addEventListener('click', () => {
         variacaoAtual = variacao;
         const novasImagens = variacao.imagens || (variacao.imagem ? [variacao.imagem] : []);
         renderizarImagens(novasImagens);
-        variacoesDiv.querySelectorAll('.cor-bolinha').forEach(b => b.classList.remove('ativa'));
-        corBolinha.classList.add('ativa');
+        corSelecionadaTexto.textContent = `Cor: ${variacao.cor || 'N/A'}`;
+        variacoesDiv.querySelectorAll('.variacao-imagem-selecao').forEach(b => b.classList.remove('variacao-ativa'));
+        imagemSelecao.classList.add('variacao-ativa');
       });
 
-      variacoesDiv.appendChild(corBolinha);
+      variacoesDiv.appendChild(imagemSelecao);
     });
   }
 
-  // Botão "Adicionar ao Carrinho"
   const botaoCarrinho = document.createElement('button');
   botaoCarrinho.textContent = 'Adicionar ao Carrinho';
   botaoCarrinho.classList.add('botao-carrinho');
@@ -111,21 +130,32 @@ export function renderProduto() {
 
     const produtoParaCarrinho = {
       nome: produto.nome,
-      preco: produto.preco,
       cor: variacaoAtual?.cor || null,
+      preco: produto.preco,
       imagem: imagemSelecionada
     };
 
     adicionarAoCarrinho(produtoParaCarrinho);
   });
 
-  // Adiciona as informações no container de informações
-  informacoesDiv.append(marca, nome, preco, variacoesDiv, botaoCarrinho);
+  informacoesDiv.append(
+    marca,
+    nome,
+    avaliacao,
+    preco,
+    vendedorInfo
+  );
 
-  // Monta o contêiner principal (contendo imagens e informações)
-  container.appendChild(imagensDiv);
-  container.appendChild(informacoesDiv);
+  coresDiv.append(
+    corSelecionadaTexto,
+    variacoesDiv,
+    botaoCarrinho
+  );
 
-  // Adiciona o container à página
-  main.appendChild(container);
+  detalhesProdutoDiv.appendChild(informacoesDiv);
+  detalhesProdutoDiv.appendChild(coresDiv);
+
+  containerYU.appendChild(imagensDiv);
+  containerYU.appendChild(detalhesProdutoDiv);
+  main.appendChild(containerYU);
 }

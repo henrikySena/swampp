@@ -34,7 +34,7 @@ export function renderHome() {
           <a class="carrosel-tag">equipamentos</a>
           <a class="carrosel-tag">acessórios</a>
           <div>
-            <a href="#produtos" class="cta-button">Descubra mais!</a>
+            <a href="#produtos" class="cta-button">Descobrir</a>
           </div>
           
         </div>

@@ -19,7 +19,7 @@
   
   .produto-imagem {
     flex: 0 1 40%;                    /* As imagens não crescem ou encolhem inesperadamente */
-    width: 40%;                       /* Limita o tamanho máximo das imagens dentro do espaço disponível */
+    width: 49%;                       /* Limita o tamanho máximo das imagens dentro do espaço disponível */
     height: auto;                     /* Mantém a proporção das imagens */
     object-fit: cover;                /* Garante que as imagens se ajustem bem ao tamanho do container */
   }
@@ -40,20 +40,119 @@
     flex: 40%;                  /* 40% da largura da tela */
     display: flex;
     flex-direction: column;     /* Alinha os itens na coluna */
-    gap: 20px;                  /* Espaço entre os itens */
   }
   
 
-  .botao-carrinho {
-    background-color: #2d6a4f;  /* Cor de fundo do botão */
-    color: white;                /* Cor do texto */
-    padding: 10px 20px;          /* Espaçamento interno */
-    border: none;                /* Retira a borda */
-    border-radius: 5px;          /* Arredonda os cantos */
-    cursor: pointer;             /* Cursor de ponteiro */
-    font-size: 16px;             /* Tamanho da fonte */
-  }
-  
-  .botao-carrinho:hover {
-    background-color: #1b5e3e;  /* Cor do fundo quando o botão for hover */
-  }
+.botao-carrinho {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  display: inline-block;
+  padding: 13px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 2rem;
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  border-radius: 80px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.botao-carrinho:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente no hover */
+}
+.botao-carrinho:active {
+  transform: scale(0.95); /* Diminui quando clicado */
+}
+
+
+
+
+.fa-star, .fa-star-half-stroke {
+  color: #a0a0a0;
+  font-size: 15px;
+}
+.avaliacao-nota {
+  margin-left: 8px;
+  color: #a0a0a0;
+  font-size: 15px;
+}
+
+.informacoes-produto {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.selecao-cores {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.preco-customizado {
+  color: #1e1e1e;           /* Vermelho suave para chamar atenção */
+  font-weight: lighter;        /* Negrito para dar ênfase */
+  font-size: 1.8rem;        /* Tamanho maior para se destacar */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: block;           /* Garante espaçamento adequado */
+}
+.cor-selecionada {
+  color: #444444;
+}
+
+
+
+
+.produto-variacoes-imagens {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.variacao-imagem-selecao {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.variacao-imagem-selecao:hover {
+  border: 2px solid #000;
+}
+
+.variacao-ativa {
+  border: 2px solid #000;
+  opacity: 1;
+}
+
+
+.produto-marca-unica {
+  font-size: 1rem;
+  color: #1e1e1e;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+
+
+.vendedor-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: -0.5rem;
+  margin-bottom: -0.2rem;
+}
+
+.vendedor-icone {
+  margin-right: 6px;
+  font-size: 16px;
+  color: #888;
+}

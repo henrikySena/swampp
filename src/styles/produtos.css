@@ -42,35 +42,35 @@
   }
 
 
-  .cor-bolinha {
-    width: 1.6rem;
-    height: 0.9rem;
-    margin-top: 0.8rem;
-    margin-left: 0.8rem;
-    border-radius: 0px;
-    border: 1px solid #000000;
-    display: inline-block;
-    cursor: pointer;
-    transition: transform 0.2s, border 0.2s;
-  }
-  
-  .cor-bolinha:hover {
-    transform: scale(1.1);
-  }
-  
-  .cor-bolinha.ativa {
-    transform: scale(1.2);
-  }
+.cor-bolinha {
+  width: 1.6rem;
+  height: 0.9rem;
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+  border-radius: 0px;
+  border: 1px solid #000000;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.cor-bolinha:hover {
+  transform: scale(1.1);
+}
+
+.cor-bolinha.ativa {
+  transform: scale(1.2);
+}
 
 
 
 
-  .variacoes-wrapper {
-    height: auto;
-    margin-top: 0.5rem;
-  }
-  
-  .produto-variacoes {
-    justify-content: center;
-  }
-  
+.variacoes-wrapper {
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+.produto-variacoes {
+  justify-content: center;
+}
+
