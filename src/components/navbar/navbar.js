@@ -110,26 +110,33 @@ export function criarNavbar() {
   nav.appendChild(navContainer);
   document.body.prepend(nav);
 
-  // Função para atualizar o estilo da navbar
-  const updateNavbarStyle = () => {
-    const hash = window.location.hash;
-    const isHomePage = (hash === '' || hash === '#home');
-    window.onscroll = null;
-
-    if (isHomePage) {
-      nav.classList.remove('opacity-full');
-      window.onscroll = () => {
-        nav.classList.toggle('blur', window.scrollY > 10);
-      };
-      nav.classList.toggle('blur', window.scrollY > 10);
-    } else {
-      nav.classList.add('opacity-full');
-      nav.classList.remove('blur');
-    }
-  };
-
+  // Aplica o estilo inicial da navbar
   updateNavbarStyle();
-  window.addEventListener('hashchange', updateNavbarStyle);
+}
+
+// Função para atualizar o estilo da navbar
+export function updateNavbarStyle() {
+  const nav = document.querySelector('.navbar');
+  if (!nav) return;
+
+  const hash = window.location.hash;
+  const isHomePage = (hash === '' || hash === '#home');
+
+  // Remove qualquer listener de scroll existente para evitar duplicatas
+  window.onscroll = null;
+
+  if (isHomePage) {
+    nav.classList.remove('opacity-full');
+    const handleScroll = () => {
+      nav.classList.toggle('blur', window.scrollY > 10);
+    };
+    window.onscroll = handleScroll;
+    // Aplica o estado inicial baseado na posição atual do scroll
+    handleScroll();
+  } else {
+    nav.classList.add('opacity-full');
+    nav.classList.remove('blur');
+  }
 }
 
 // Função para inicializar o badge do carrinho
@@ -148,7 +155,7 @@ function inicializarBadge(anchor) {
 export function atualizarContadorCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const carrinhoLink = document.querySelector('a[href="#carrinho"]');
-  const badge = carrinhoLink.querySelector('.carrinho-badge');
+  const badge = carrinhoLink?.querySelector('.carrinho-badge');
 
   if (badge) {
     badge.textContent = carrinho.length;

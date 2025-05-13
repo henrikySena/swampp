@@ -1,16 +1,18 @@
 import { navbarLinks, criarNavbar } from '../components/navbar/navbar.js';
 import { produtosEmDestaque } from '../../data/Produtos.js';
 import { adicionarAoCarrinho } from './Carrinho.js';
-import { renderizarProdutos } from '../components/produto/renderProduto.js'; // Nova importação
+import { renderizarProdutos } from '../components/produto/renderProduto.js';
 import '../styles/produtos.css';
 import '../styles/home.css';
 import { carousel } from '../components/carousel/carousel.js';
 
 console.log(navbarLinks); // Teste se está funcionando
-criarNavbar(); // Adiciona a navbar na tela
 
 export function renderHome() {
   console.log('Página Home carregada');
+
+  // Cria a navbar antes de renderizar o conteúdo
+  criarNavbar(); // Movido para dentro da função
 
   const main = document.querySelector('main');
   main.innerHTML = `
@@ -36,14 +38,12 @@ export function renderHome() {
           <div>
             <a href="#produtos" class="cta-button">Descobrir</a>
           </div>
-          
         </div>
 
         <button class="carousel-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
         <button class="carousel-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
       </div>
     </section>
-
 
     <section class="destaques">
       <h2 class="titulo-destaques">Destaques da semana!</h2>
@@ -64,7 +64,6 @@ export function renderHome() {
         <p class="paragrafo-home-container">Na Swampp, 35% do valor das vendas é destinado a ações de preservação ambiental. Mais do que incentivar a aventura e a conexão com a natureza, temos a missão de contribuir para a conservação do meio ambiente e do bem-estar de todos os seres.</p>
       </section>
 
-    
       <section class="home-grid">
         <div class="inteira">
           <div class="secao-superior">
