@@ -1,9 +1,7 @@
-// /src/pages/HomeProdutos.js
 import { renderizarProdutos } from "../components/produto/renderProduto.js";
 import { produtos } from "../../data/Produtos.js";
 import { adicionarAoCarrinho, atualizarCarrinhoBadge } from "./Carrinho.js";
 import { criarNavbarProdutos } from "../components/navbar/navbarSecundaria.js";
-
 import "../styles/HomeProdutos.css";
 import "../components/navbar/navbarSecundaria.css";
 

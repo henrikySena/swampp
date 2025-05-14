@@ -1,6 +1,10 @@
 import { produtosEmDestaque, produtos } from '../../data/Produtos.js';
-import { adicionarAoCarrinho } from './Carrinho.js';
+import { adicionarAoCarrinho, atualizarCarrinhoBadge } from "./Carrinho.js";
+import { criarNavbarProdutos } from "../components/navbar/navbarSecundaria.js";
+
+import "../styles/HomeProdutos.css";
 import "../styles/visualizarProduto.css";
+import "../components/navbar/navbarSecundaria.css";
 
 export function renderProduto() {
   const main = document.querySelector('main');
@@ -49,6 +53,15 @@ export function renderProduto() {
   }
 
   renderizarImagens(imagens);
+
+  // Adicionar a navbar secundária
+try {
+  const navbar = criarNavbarProdutos();
+  document.body.prepend(navbar);
+  atualizarCarrinhoBadge();
+} catch (error) {
+  console.error("Erro ao inicializar a navbar:", error);
+}
 
   const detalhesProdutoDiv = document.createElement('div');
   detalhesProdutoDiv.classList.add('detalhes-produto');
