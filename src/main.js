@@ -1,3 +1,4 @@
+// /src/main.js
 import { renderHome } from './pages/Home.js';
 import { renderCarrinho } from './pages/Carrinho.js';
 import { renderProduto } from './pages/VisualizarProduto.js';
@@ -8,13 +9,13 @@ function router() {
   const hash = window.location.hash;
   console.log('Hash atual:', hash);
 
-  // Remove a navbar existente, se houver
-  const oldNav = document.querySelector('.navbar');
+  // Remove qualquer navbar existente
+  const oldNav = document.querySelector('nav');
   if (oldNav) oldNav.remove();
 
   // Renderiza a página correspondente
   if (hash === '' || hash === '#home') {
-    renderHome(); // A navbar será criada dentro de renderHome
+    renderHome();
   } else if (hash.startsWith('#carrinho')) {
     renderCarrinho();
   } else if (hash.startsWith('#produtos')) {

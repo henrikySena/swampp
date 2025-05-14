@@ -1,14 +1,27 @@
-// Carrinho.js
+// /src/pages/Carrinho.js
+import { criarNavbarProdutos } from "../components/navbar/navbarSecundaria.js";
 
-// Função para renderizar o carrinho
 export function renderCarrinho() {
   const main = document.querySelector('main');
+  if (!main) {
+    console.error("Elemento <main> não encontrado no DOM");
+    return;
+  }
 
   main.innerHTML = `
     <h1>Carrinho de Compras</h1>
     <div id="carrinho-container"></div>
-    <a href="#" id="voltar-home">Voltar para Home</a>
+    <a href="#home" id="voltar-home">Voltar para Home</a>
   `;
+
+  // Adicionar a navbar secundária
+  try {
+    const navbar = criarNavbarProdutos();
+    document.body.prepend(navbar);
+    atualizarCarrinhoBadge();
+  } catch (error) {
+    console.error("Erro ao inicializar a navbar:", error);
+  }
 
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const carrinhoContainer = document.getElementById('carrinho-container');
@@ -33,11 +46,11 @@ export function renderCarrinho() {
   // Adicionar eventos de clique aos botões de remoção
   carrinhoContainer.querySelectorAll('.remover-btn').forEach(btn => {
     btn.addEventListener('click', function (e) {
-      e.preventDefault(); // Evitar comportamento padrão
+      e.preventDefault();
       const id = this.getAttribute('data-id');
       if (id) {
         removerDoCarrinho(id);
-        renderCarrinho(); // Atualiza a tela após remover
+        renderCarrinho();
       }
     });
   });
@@ -56,19 +69,27 @@ export function renderCarrinho() {
   });
 }
 
-// Função para adicionar item ao carrinho
 export function adicionarAoCarrinho(produto) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  // Garantir que o produto tenha um ID único
-  const id = String(produto.id || Date.now()); // Usar timestamp se o ID não existir
+  const id = String(produto.id || Date.now());
   carrinho.push({ ...produto, id });
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
   alert('Produto adicionado ao carrinho!');
+  atualizarCarrinhoBadge();
 }
 
-// Função para remover item do carrinho
 export function removerDoCarrinho(id) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const novoCarrinho = carrinho.filter(produto => String(produto.id) !== String(id));
   localStorage.setItem("carrinho", JSON.stringify(novoCarrinho));
+  atualizarCarrinhoBadge();
+}
+
+export function atualizarCarrinhoBadge() {
+  const badge = document.querySelector('.carrinho-badge-secundario');
+  if (badge) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    badge.textContent = carrinho.length;
+    badge.style.display = carrinho.length > 0 ? 'inline-block' : 'none';
+  }
 }

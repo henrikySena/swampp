@@ -151,14 +151,22 @@ function inicializarBadge(anchor) {
   setInterval(atualizarContadorCarrinho, 1000);
 }
 
-// Atualiza o contador do carrinho
 export function atualizarContadorCarrinho() {
-  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  const carrinhoLink = document.querySelector('a[href="#carrinho"]');
-  const badge = carrinhoLink?.querySelector('.carrinho-badge');
-
-  if (badge) {
-    badge.textContent = carrinho.length;
-    badge.style.display = carrinho.length > 0 ? 'block' : 'none';
-  }
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  
+    // Atualiza o badge da navbar principal
+    const carrinhoLink = document.querySelector('a[href="#carrinho"]');
+    const badgePrincipal = carrinhoLink?.querySelector('.carrinho-badge');
+    if (badgePrincipal) {
+        badgePrincipal.textContent = carrinho.length;
+        badgePrincipal.style.display = carrinho.length > 0 ? 'block' : 'none';
+    }
+  
+    // Atualiza o badge da navbar secundaria, se existir
+    const carrinhoSecundario = document.querySelector('a[href="#carrinho"]');
+    const badgeSecundario = carrinhoSecundario?.querySelector('.carrinho-badge-secundario');
+    if (badgeSecundario) {
+        badgeSecundario.textContent = carrinho.length;
+        badgeSecundario.style.display = carrinho.length > 0 ? 'block' : 'none';
+    }
 }
