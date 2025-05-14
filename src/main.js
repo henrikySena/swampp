@@ -1,4 +1,3 @@
-// /src/main.js
 import { renderHome } from './pages/Home.js';
 import { renderCarrinho } from './pages/Carrinho.js';
 import { renderProduto } from './pages/VisualizarProduto.js';
@@ -13,18 +12,26 @@ function router() {
   const oldNav = document.querySelector('nav');
   if (oldNav) oldNav.remove();
 
-  // Renderiza a página correspondente
-  if (hash === '' || hash === '#home') {
+  // nossas rodas
+  if (
+    hash === '' ||
+    hash === '#home' ||
+    hash === '#sobre' ||
+    hash === '#favoritos' ||
+    hash === '#perfil' ||
+    hash === '#buscar'
+  ) {
     renderHome();
   } else if (hash.startsWith('#carrinho')) {
     renderCarrinho();
   } else if (hash.startsWith('#produtos')) {
-    console.log('Chamando renderProdutos');
     renderProdutos();
   } else if (hash.startsWith('#produto')) {
     renderProduto();
+  } else {
+    // Qualquer outra rota desconhecida também pode cair como fallback para Home
+    renderHome();
   }
 }
-
 window.addEventListener('DOMContentLoaded', router);
 window.addEventListener('hashchange', router);

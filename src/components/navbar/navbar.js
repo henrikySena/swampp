@@ -119,8 +119,16 @@ export function updateNavbarStyle() {
   const nav = document.querySelector('.navbar');
   if (!nav) return;
 
+  // nossas rodas
   const hash = window.location.hash;
-  const isHomePage = (hash === '' || hash === '#home');
+  const isHomePage =
+  hash === '' ||
+  hash === '#home' ||
+  hash === '#sobre' ||
+  hash === '#perfil' ||
+  hash === '#favoritos' ||
+  hash === '#buscar';
+
 
   // Remove qualquer listener de scroll existente para evitar duplicatas
   window.onscroll = null;

@@ -1,5 +1,10 @@
 /* /src/components/navbar/navbarSecundaria.css */
 .navbar-produtos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* para garantir que fique acima de outros elementos */
     background-color: #fff;
     padding: 1.3rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -24,27 +29,65 @@
 .navbar-pesquisa {
     flex: 1;
     margin: 0 20px;
-    margin-left: 5rem;
-    margin-right: 8rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 
+.input-pesquisa::placeholder {
+    color: #b3b3b3;  /* Cor do texto do placeholder */
+    font-size: 15px;  /* Tamanho da fonte */
+}
+
+
 .input-pesquisa {
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 2.5rem; 
     width: 100%;
     padding: 0.7rem;
     border: 1px solid #ccc;
     border-radius: 400px;
     font-size: 16px;
+    
+}
+.input-pesquisa:hover {
+    border-color: #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+
+
+}
+.input-pesquisa:hover {
+    border-color: none;
+    box-shadow: none;
 }
 
 .navbar-icones {
     display: flex;
-    gap: 15px;
+    gap: 1.3rem;
 }
+
+.navbar-icones svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: transparent; /* Definir o preenchimento inicial */
+    color: #000; /* Definir a cor inicial */
+    transition: fill 0.3s ease-in-out, color 0.3s ease-in-out; /* Transições para ambas as propriedades */
+}
+
+/* Aplica preenchimento e cor ao passar o mouse, com transição suave */
+.navbar-icones svg:not(.icone-lupa):hover {
+    fill: currentColor;
+    color: #1e1e1e;
+    cursor: pointer;
+}
+
+
 
 .icone-link {
     position: relative;
-    color: #333;
+    color: #000000;
     text-decoration: none;
+    font-weight: normal;
 }
 
 .carrinho-badge-secundario {
@@ -57,4 +100,33 @@
     padding: 2px 6px;
     font-size: 12px;
     display: none;
+}
+
+
+
+
+
+
+.pesquisa-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-pesquisa {
+    width: 100%;
+    padding: 0.7rem 2.5rem 0.7rem 2.5rem; /* espaço à esquerda para a lupa */
+    border: 1px solid #ccc;
+    border-radius: 400px;
+    font-size: 16px;
+}
+
+.icone-lupa {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem;
+    height: 1.1rem;
+    color: #999;
+    pointer-events: none;
 }
