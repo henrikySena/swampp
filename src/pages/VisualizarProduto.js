@@ -1,8 +1,16 @@
 import { produtosEmDestaque, produtos } from '../../data/Produtos.js';
 import { adicionarAoCarrinho } from './Carrinho.js';
 import "../styles/visualizarProduto.css";
+import { criarNavbarProdutos } from "../components/navbar/navbarSecundaria.js";
 
 export function renderProduto() {
+  try {
+    const navbar = criarNavbarProdutos();
+    document.body.prepend(navbar);
+    atualizarCarrinhoBadge();
+  } catch (error) {
+    console.error("Erro ao inicializar a navbar:", error);
+  }
   const main = document.querySelector('main');
   main.innerHTML = '';
 
@@ -73,7 +81,7 @@ export function renderProduto() {
   vendedorInfo.classList.add('vendedor-info');
   vendedorInfo.innerHTML = `
     <span class="fa fa-shield-alt vendedor-icone"></span>
-    <p>Vendido e entregue por <strong> Swampp</strong></p>
+    <p>Vendido e entregue por <strong>Swampp</strong></p>
   `;
 
   const avaliacao = document.createElement('div');
@@ -102,7 +110,7 @@ export function renderProduto() {
       const imagemSelecao = document.createElement('img');
       const primeiraImagem = variacao.imagens?.[0] || variacao.imagem || '';
       imagemSelecao.src = primeiraImagem || 'placeholder.jpg';
-      imagemSelecao.alt = `Variacao ${variacao.cor || 'desconhecida'}`;
+      imagemSelecao.alt = `Variação ${variacao.cor || 'desconhecida'}`;
       imagemSelecao.classList.add('variacao-imagem-selecao');
       if (index === 0) imagemSelecao.classList.add('variacao-ativa');
       imagemSelecao.title = variacao.cor || 'Cor sem nome';
@@ -127,14 +135,13 @@ export function renderProduto() {
   botaoCarrinho.setAttribute('aria-label', `Adicionar ${produto.nome} ao carrinho`);
   botaoCarrinho.addEventListener('click', () => {
     const imagemSelecionada = variacaoAtual?.imagens?.[0] || variacaoAtual?.imagem || imagens[0] || '';
-
     const produtoParaCarrinho = {
+      id: produto.id, // Inclui o id original do produto
       nome: produto.nome,
       cor: variacaoAtual?.cor || null,
       preco: produto.preco,
       imagem: imagemSelecionada
     };
-
     adicionarAoCarrinho(produtoParaCarrinho);
   });
 
